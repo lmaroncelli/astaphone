@@ -1,0 +1,94 @@
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+/*  messaggio di errore  */
+.alert{
+ ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+
+
+
+
+
+/* override bootstrap */
+
+.sldeHeader .row {
+	margin:15px 0;
+}
+
+
+.sldeHeader .glyphicon-remove, .sldeProdotti .glyphicon-remove{
+	color:red;
+}
+
+.sldeHeader .col-md-1, .sldeProdotti .col-md-1 {
+	margin-top: 20px;
+}
+
+
+button.delete_image_negozio .glyphicon-remove {
+	color:red;
+}
+
+
+.row.margin {
+	margin:15px 0;
+}
+
+
+
+/*  elenco delle immagini della galleria al momento di caricarne altre */
+
+div.container_galleria {
+	margin: 20px 0;
+	padding: 0px;
+}
+
+
+ul.galleria
+{
+list-style: none;
+margin:15px 5px 15px 0;
+padding-left:0;
+}
+
+ul.galleria li {
+	margin: 40px 20px;
+	display:block;
+	width:90%;
+	min-height:60px;
+	border:0px solid green;
+	overflow:hidden;
+}
+
+ul.galleria img {
+	float:left;
+}
+
+ul.galleria textarea {
+	margin-left:230px;
+	width:50%;
+	margin-top: 10px;
+}
+
+
+
+
+div.slde {
+	margin-top:20px;
+}
+
+

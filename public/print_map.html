@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Directions service</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 751px;
+    	width: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+  <div id="map"></div>
+  <div id="right-panel"></div>
+	
+	<script> 
+	var $lat_center = 41.898009; 
+	var $long_center = 12.492947;
+	
+	function initMap() {
+	   var center = {lat: $lat_center, lng: $long_center};
+	 
+	   directionsDisplay = new google.maps.DirectionsRenderer();
+	   directionsService = new google.maps.DirectionsService();
+
+	   var map = new google.maps.Map(document.getElementById('map'), {
+	     zoom: 12,
+	     center: center,
+	     styles: mapStyle,
+	     zoomControl: true,
+	     mapTypeControl: false,
+	     scaleControl: false,
+	     streetViewControl: true,
+	     rotateControl: false,
+	     fullscreenControl: false,
+	     scrollwheel: false,
+	   });
+
+	   directionsDisplay.setMap(map);
+	   directionsDisplay.setPanel(document.getElementById('right-panel'));
+
+	   var mapStyle = [{
+	             'featureType': 'all',
+	             'elementType': 'all',
+	             'stylers': [{'visibility': 'on'}]
+	           }, {
+	             'featureType': 'landscape',
+	             'elementType': 'geometry',
+	             'stylers': [{'visibility': 'on'}, {'color': '#fcfcfc'}]
+	           }, {
+	             'featureType': 'water',
+	             'elementType': 'labels',
+	             'stylers': [{'visibility': 'on'}]
+	           }, {
+	             'featureType': 'water',
+	             'elementType': 'geometry',
+	             'stylers': [{'visibility': 'on'}, {'hue': '#5f94ff'}, {'lightness': 60}]
+	           }];
+
+
+
+
+	var partenza = window.opener.document.getElementById("partenza").value;
+
+	console.log(partenza);
+
+	var arrivo = window.opener.document.getElementById("arrivo").value;
+
+	console.log(arrivo);
+
+	var selectedMode = window.opener.document.getElementById('mezzo').value;
+
+	console.log(selectedMode);
+
+	var request = {
+	origin:partenza, 
+	destination:arrivo,
+	travelMode: google.maps.TravelMode[selectedMode]
+	};
+
+	directionsService.route(request, function(response, status) {
+	if (status == google.maps.DirectionsStatus.OK) {
+	directionsDisplay.setDirections(response);
+	}
+	});
+
+	}; 
+
+	</script> 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqImK9lRFJdcFLSt0W-t_QQC70fCsCwV0&callback=initMap">
+    </script>
+	
+	<script type="text/javascript">
+		window.print();
+	</script>
+
+  </body>
+  </html>
+
+
+
+

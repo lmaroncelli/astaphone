@@ -1,0 +1,958 @@
+/* Owl Carousel Bootstrap Custom CSS */
+
+/* Header Navigation */
+#top-nav{
+	border-bottom: 1px solid #e1e6dd;
+	background: #FFF;
+	-webkit-transform: translateZ(0)
+
+}
+#top-nav.navbar{
+	margin-bottom: 0px;
+
+}
+#top-nav.navbar .nav{
+	margin: 8px 0px;
+}
+	
+#top-nav.navbar .nav > li > a {
+	padding: 6px 12px;
+	margin: 0px;
+	text-transform: uppercase;
+	font-weight: 400;
+
+	-webkit-transition: background-color 200ms ease;
+	-moz-transition: background-color 200ms ease;
+	-o-transition: background-color 200ms ease;
+	transition: background-color 200ms ease;
+}
+#top-nav.navbar .nav > li > a.download{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#top-nav.navbar .nav > li > a.download-on{
+	background-color: #ff8a3c;
+	color: #ffffff;
+}
+#top-nav.navbar .nav > li > a.download-on:hover{
+	color: #ffffff;
+	background-color: #ff7920;
+}
+.btn-navbar span.icon-bar{
+	margin-top: 0px;
+}
+
+/* Header  */
+
+#header{
+	background: #f1f1f1;
+	padding: 100px 0 100px;
+}
+#header h1{
+	color: #7fc242;
+	margin-bottom: 10px;
+	margin-top: 40px;
+}
+#header h3{
+	margin-bottom: 30px;
+	width: 400px;
+}
+#header .btn-success {
+	padding: 15px 30px;
+	margin-bottom: 5px;
+}
+#header .logo{
+	display: block;
+	margin-top:60px;
+	float: right
+}
+img.arrow-down{
+	margin: 0 auto;
+	display: block;
+}
+h1{
+	margin-top: 80px;
+}
+
+pre.pre-show{
+	margin: 40px 0px;
+
+}
+.tab-content pre.pre-show{
+	margin: 0px 0px 0px 0px;
+}
+.nav-tabs{
+	margin-top: 20px;
+	margin-bottom: 0px;
+	
+}
+.tab-content{
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	-webkit-border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
+	border-radius: 0px 0px 4px 4px;
+	
+}
+/* Content */
+.table th, .table td {
+padding: 8px 12px;
+}
+
+.wrap_title{margin-bottom: 30px;}
+
+/*  Owl */
+#owl-demo .item,
+#owlc .item,
+#owlf .item,
+#owlshopping .item
+{
+	margin: 4px;
+}
+#owl-demo .item img,
+#owlc .item img,
+#owlf .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#owlshopping .item img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+/* Footer */
+
+#footer{
+	padding: 20px 0px;
+	background: #f3f3f3;
+	text-align: center
+}
+.twitter-share-button{
+	top: 4px;
+	position: relative;
+}
+
+/* Demo Slides */
+
+#owl-example .item{
+	padding: 30px 0px;
+	margin: 10px;
+	color: #FFF;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+}
+#owl-example .item img{
+	width: auto;
+	margin: 0 auto;
+	display: block;
+}
+#owl-example .item h3{
+	font-size: 28px;
+	font-weight: 300;
+	margin: 25px 0 0;
+}
+#owl-example .item h4{
+	margin: 5px 0 0;
+	font-size: 18px;
+}
+.item h1{
+	margin: inherit;
+}
+
+/* cambio il colore dei bottoni owl-controls */
+
+.owl-theme .owl-controls .owl-buttons.celiachiamo-buttons div  {
+	color: #ffffff;
+	background-color: #efc55f;
+	opacity:initial;
+}
+
+
+.orange{
+	background: #ff8a3c;
+}
+.darkCyan{
+	background: #42bdc2;
+}
+.forestGreen{
+	background: #7fc242;
+}
+.yellow {
+	background: #ffd800;
+}
+.dodgerBlue {
+	background: #388bd1;
+}
+.skyBlue {
+	background: #a1def8;
+}
+.zombieGreen {
+	background: #3fbf79;
+}
+.violet {
+	background: #db6ac5;
+}
+.yellowLight {
+	background: #fee664;
+}
+.steelGray {
+	background: #cad3d0;
+}
+
+
+
+/* SOCIAL BUTTONS */
+
+/* http://stackoverflow.com/questions/963636/why-cant-i-center-with-margin-0-auto */
+.social_buttons {
+	/*border: 1px solid green;*/
+    height: 50px;
+}
+.social_buttons ul {
+	margin: 0 auto;
+	width: 90%;
+	display: inline;
+	list-style: none;
+}
+
+.social_buttons ul li {
+	display:inline;
+    padding-right:20px;
+}
+
+
+/* NEGOZI */
+
+/* centro perché con la classe responsive hanno display block*/
+div.row.negozi img {
+	margin: 0 auto;
+}
+
+
+
+/* Parallax */
+.parallax {
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax.parallax1 {
+    margin-top: -150px;
+}
+
+.parallax.parallax2 {
+   height: 600px;
+}
+ 
+
+/*	################################################################
+	3. GOOGLE MAP
+################################################################# */
+
+#map {
+	height: 751px;
+    width: 100%;
+}
+
+.row.mappa {
+	background-color: #f0f0f0;
+}
+
+.row.mappa .form-group {
+	margin-bottom: 0px;
+}
+.row.mappa .form-control {
+    border: 1px solid #777;
+    color: #777;
+    background-color: #fff;
+    margin: 0 auto!important;
+    width: 85%
+}
+
+.row.mappa p {
+	margin-top: 40px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.row.mappa label {
+	margin-bottom: -5px;
+}
+
+#submitMappa {
+	margin-top: 10px;
+}
+
+.col-md-2.stampa {
+	margin-top: 15px;
+}
+
+.istruzioni_mappa {
+	display: none;
+}
+
+.btn-stampa {
+	display: none;
+	margin-top: 12px;
+}
+
+.btn-stampa:hover  {
+	cursor: pointer;
+}
+
+
+
+div#bordo_farina {
+	height: 368px;
+	background: url('../img/farina_bordo.png') no-repeat left center;
+	z-index: 9999;
+	/*border: 1px solid green;*/
+}
+
+
+div.dopo_freschi {
+	margin-top: -150px;
+}
+
+
+
+div#bordo_farina2 {
+	height: 349px;
+	background: url('../img/farina_parallax.png') no-repeat left center;
+	z-index: 9999;
+	/*border: 1px solid green;*/
+}
+
+div.dopo_confezionati {
+	margin-top: -550px;
+}
+
+div#confezionati {
+	margin-top: -200px;
+}
+
+
+div#bordo_farina3 {
+	height: 349px;
+	background: url('../img/farina_parallax.png') no-repeat left center;
+	z-index: 9999;
+	/*border: 1px solid green;*/
+}
+
+div.prima_shopping {
+	  margin-top: 50px;
+}
+
+
+div.dopo_shopping {
+	margin-bottom: -5500px;
+}
+
+
+div.prima_fan_pages {
+	margin-top: 70px;	
+}
+
+
+div#bordo_farina4 {
+	height: 750px;
+	background: url('../img/farina_parallax2_lu.png') no-repeat left center;
+	z-index: 9999;
+	/*border: 1px solid green;*/
+}
+
+div.ultimo{
+	margin-top: -650px;	
+}
+
+
+div#blog {
+	margin-bottom: 30px;
+}
+
+
+div.prima_celiachia {
+	margin-top: -800px;
+}
+
+
+div.mappa {
+	margin-top:0px;
+}
+
+
+/* BRAND FOOTER */
+
+span.negozi {
+	display: block;
+	font-family: "Playball", Helvetica, Arial, sans-serif;
+	font-size: 56.92px;
+	color: #efc55f;
+	margin-top:36px;
+}
+
+
+footer .container {
+	padding-top: 0;
+}
+
+.row.row_brands {
+	
+}
+
+.row.row_brands .col-sm-4 {
+	height: 100%;
+}
+
+.row.row_brands .brand {
+	background-color: #fc3c3c3;
+	padding-top: 30px;
+	width: 300px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.circle {
+    display: block;
+    width: 300px;
+    height: 300px;
+    -moz-border-radius: 150px;
+    -webkit-border-radius: 150px;
+}
+
+.circle.lab:hover {
+    border: 1px solid red;
+}
+
+.circle.shop:hover {
+    border: 1px solid black;
+}
+
+.circle.tib:hover {
+    border: 1px solid darkorchid;
+}
+
+.lab {
+    background: #f07268;
+    background-image: url(../img/footer1.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;    
+}
+
+.lab:hover {
+    background: #e55b4f;
+    background-image: url(../img/footer1.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+
+.shop {
+    background: #b6e9ef;
+    background-image: url(../img/footer2.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;    
+}
+
+.shop:hover {
+    background: #8cdbe2;
+    background-image: url(../img/footer2.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+
+
+.tib {
+    background: #f2d07f;
+    background-image: url(../img/footer3.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;    
+}
+
+.tib:hover {
+    background: #efc55f;
+    background-image: url(../img/footer3.png);
+    background-position:50% 50%;
+    background-repeat:no-repeat;
+}
+
+
+
+
+.row.row_brands .brand img {
+	margin: 0 auto;
+}
+
+.row.row_brands .brand p {
+	min-height: 150px;
+	padding-top: 30px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #777;
+	background-color: #fc3c3c3;
+}
+
+.row.row_brands .brand p.title {
+	font-weight: bold;
+	font-size: 18px;
+	font-family: "Libre Baskerville", Helvetica, Arial, sans-serif;
+	color: #efc55f;
+	background-color: #fc3c3c3;
+}
+
+
+
+/* ROW SOCIAL */
+
+.row-social {
+	padding-top: 60px;
+	padding-bottom: 50px;
+	font-family: "Libre Baskerville", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	color: #919191;
+}
+
+
+.row-social ul {
+}
+
+.row-social ul li {
+	display: inline;
+	padding-left: 10px;
+}
+
+
+
+/* footer slide */
+
+/* in questo modo le frecce dx e sx sono relative al div contenitore #footerSlide che setto a position relative */
+.owl-carousel {
+	position: static !important;
+}
+
+div#footerSlide {
+	width: 100%;
+	height: 286px;
+	background: url('../img/sfondo_th.jpg') no-repeat left center;
+	padding-top: 35px;
+	padding-left: 80px;
+	padding-right: 50px;
+	position: relative;
+}
+
+#footerSlide .bx-wrapper .bx-viewport {
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+
+}
+
+
+/* footer slide owlcarosel */
+
+
+#footerSlide .label-image-footer {
+	color: #fff;
+	font-weight: bold;
+	font-size: 21.17px;
+	font-family: "Libre Baskerville", Helvetica, Arial, sans-serif;
+	 background-color: rgba(0,0,0,.40);
+	 height: 100%;
+	 padding: 0px;
+	 padding-top: 70px;
+	 text-align: center;	
+}
+
+
+
+/* footerSlide style navbar */
+#footerSlide .owl-nav .owl-prev {
+	position: absolute;
+	top:40%;
+	left: 25px;
+	background: url('../img/icon/freccia_sx.png') no-repeat;
+	width: 27px;
+	height: 36px;
+	text-indent: -9999px;
+}
+
+#footerSlide .owl-nav .owl-next {
+	position: absolute;
+	top:40%;
+	right: 25px;
+	background: url('../img/icon/freccia_dx.png') no-repeat;
+	width: 27px;
+	height: 36px;
+	text-indent: 9999px;
+}
+
+
+/* shoppingSlide style navbar */
+#owlshopping .owl-nav .owl-prev {
+	position: absolute;
+	top:40%;
+	left: -15px;
+	background: url('../img/icon/freccia_sx.png') no-repeat;
+	width: 27px;
+	height: 36px;
+	text-indent: -9999px;
+}
+
+#owlshopping .owl-nav .owl-next {
+	position: absolute;
+	top:40%;
+	right: -15px;
+	background: url('../img/icon/freccia_dx.png') no-repeat;
+	width: 27px;
+	height: 36px;
+	text-indent: 9999px;
+}
+
+
+/* pdodotti freschi nav nar */
+/* pdodotti confezionati nav nar */
+#freschi .owl-nav .owl-prev, #confezionati .owl-nav .owl-prev {
+	position: absolute;
+	top:50%;
+	left: 25px;
+	background: url('../img/icon/LeftW.png') no-repeat;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #fff;
+	-moz-border-radius: 150px;
+    -webkit-border-radius: 150px;
+	background-color: #efc55f;
+	text-indent: -9999px;
+}
+
+#freschi .owl-nav .owl-next, #confezionati .owl-nav .owl-next  {
+	position: absolute;
+	top:50%;
+	right: 25px;
+	background: url('../img/icon/RightW.png') no-repeat;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #fff;
+	-moz-border-radius: 150px;
+    -webkit-border-radius: 150px;
+	background-color: #efc55f;
+	text-indent: 9999px;
+}
+
+
+
+
+
+
+/* More Demo Box */
+
+#example-info h1,
+#more h1{
+	margin-top: 40px;
+}
+.demos-row{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.demo-page{
+	margin-top: 0px;
+	margin-bottom: 100px;
+}
+.demo-box{
+	display: block;
+	background: #f3f3f3;
+	text-align: center;
+	font-size: 18px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.demo-box h3{
+	padding-bottom:20px;
+	margin: 0px;
+	color: #869690;
+}
+.demo-box:hover{
+	text-decoration: none;
+}
+.demo-wrapper{
+	padding: 30px 0px 20px 0px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.demo-slide {
+	float: left;
+}
+.demo-slide .bg{
+	background: #aebab6;
+	margin-right: 1px;
+	height: 100%;
+}
+.demo-box:hover .demo-slide .bg{
+	background: #7fc242;
+}
+/* Images */
+.demo-images .demo-slide{
+	height: 40px;
+	width: 33.3333333%;
+}
+
+/* Full */
+.demo-full {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.demo-full .demo-slide{
+	height: 40px;
+	width: 25%;
+}
+
+/* Custom */
+.demo-custom .demo-slide{
+	height: 40px;
+	width: 10%;
+}
+/* One */
+.demo-one .demo-slide{
+	height: 40px;
+	width: 100%;
+}
+
+/* json */
+
+.demo-Json .demo-slide {
+	height: 40px;
+	width: 20%;
+}
+.demo-Json-custom .demo-slide{
+	height: 40px;
+	width: 33.3333333%;
+}
+/* loading icon */
+
+.demo-lazy .demo-slide{
+	height: 40px;
+	width: 33.3333333%;
+}
+.demo-lazy .demo-slide .bg{
+background: url('../img/AjaxLoader.gif') no-repeat center center #aebab6;
+}
+
+/* Auto Height */
+.demo-height .demo-slide{
+	height: 40px;
+	width: 100%;
+}
+
+/* Changelog  */
+#changelog{
+	margin-bottom: 40px;
+}
+#changelog .label{
+	margin-bottom:10px;
+}
+#changelog .log{
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e1e6dd;
+}
+/* Faq */
+#faq dt {
+	line-height: 26px;
+}
+#faq dd{
+	line-height: 22px;
+	margin-bottom: 20px;
+}
+
+
+
+/* Responsive Stuff */
+
+
+@media (max-width: 979px) {
+	.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+	padding: 0px;
+	}
+	.navbar-fixed-top, .navbar-fixed-bottom {
+	position: fixed;
+	}
+
+	/*.row.row_prodotti_freschi {
+		position: relative;
+	}	
+
+	.row.row_prodotti_freschi .first_video_freschi {
+		position: absolute;
+		left:50%;
+		
+	}*/
+
+}
+
+/* dai 980 si rimette centrale */
+@media (min-width: 980px) {
+		.row-social .row {
+		text-align: left!important;
+	}
+
+}
+
+/* il footer già a 1600 si mette impilato (fino a 981) */
+@media (min-width: 981px) and (max-width: 1600px) {
+		.row-social .row .col-md-12{	
+		 width: 100%!important;
+	}
+
+}
+
+
+@media (max-width: 768px) {
+
+	.navbar.navbar-fixed-top{
+		position: static;
+	}
+	.btn.btn-navbar{
+		margin: 9px 20px 9px 8px;
+		padding: 10px 10px;
+	}
+	.nav-collapse .nav > li{
+		border-top: 1px solid #e1e6dd;
+		text-align: center
+	}
+	#header .logo{
+		margin-top:40px;
+		margin: 20px auto 0px;
+		float: none;
+		height: 150px;
+	}
+	#header {
+		text-align: center;
+		padding: 60px 0px 30px;
+	}
+	#header h1{
+		margin: 10px 0;
+	}
+	#header h3{
+	margin-bottom: 10px;
+	width: auto;
+	padding: 0px 20px;
+	}
+	h1 {
+		font-size: 38px;
+		margin: 20px 0;
+	}
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 20px;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	h5 {
+		font-size: 13px;
+	}
+	h6 {
+		font-size: 12px;
+	}
+	
+
+	/* AVVICINO I BRAND TONDI QUANDO SONO STACKED*/
+	
+	div.row.row_brands .col-sm-4 {
+		margin-bottom: -80px;
+	}
+
+	.row.row_brands .brand p {
+		padding-top: 5px;
+		min-height: 130px;
+	}
+
+
+	.row_prodotti_freschi {
+		margin-left: 0px!important;
+		margin-right: 0px!important;
+	}
+
+
+}
+
+
+@media (max-width: 480px) {
+	.navbar-fixed-top, .navbar-fixed-bottom {
+	position: static;
+	}
+	#header {
+		text-align: center;
+		padding: 20px 0px 20px;
+	}
+	#header .logo{
+		margin-top:0px;
+	}
+
+
+	#footerSlide .label-image-footer {
+		font-size: 12px;
+		text-align: left;
+		padding-left: 3px;
+	}
+
+}
+
+/*
+NO MORE TABLES!! ;)
+*/
+@media (max-width: 767px) {
+
+	.hp-table table, .hp-table thead, .hp-table .hp-table tbody, .hp-table th, .hp-table td, .hp-table tr { 
+		display: block; 
+	}
+	.hp-table thead tr { 
+		display: none;
+	}
+	.hp-table tr { border: 0px solid #ccc; margin-bottom: 10px; }
+	
+	.hp-table td:before { 
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	.hp-table td:nth-of-type(2):before { 
+		content: "Default:";
+		font-weight: bold;
+	}
+	.hp-table td:nth-of-type(3):before { 
+		content: "Type:";
+		font-weight: bold;
+	}
+	.hp-table td:nth-of-type(4):before { 
+		content: "Description:";
+		font-weight: bold;
+	}
+}
+
+
+
+
+
+
+
+
+
+

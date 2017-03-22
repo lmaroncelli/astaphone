@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="52" viewBox="0 0 52 52" width="52" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata16">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <desc id="desc6"/>
+ <g id="miu" transform="matrix(2.359 0 0 2.359 -2.376 -2.3421)" fill="none"></g>
+ <style id="style4163" type="text/css">.st0{fill:#2F3130;}
+	.st1{fill:#FFFFFF;}</style>
+ <g id="g4165" transform="matrix(.33480 0 0 .33480 .13898 .13899)">
+  <circle id="circle4167" class="st0" cy="77.2" cx="77.2" r="77.2" fill="#2f3130"/>
+  <g id="g4169">
+   <g id="g4171">
+    <path id="path4173" class="st1" fill="#fff" d="m77.2 67.8c-7.8 0-14 6.3-14 14 0 7.8 6.3 14.1 14 14.1 7.8 0 14.1-6.3 14.1-14.1-0.1-7.7-6.4-14-14.1-14zm37.4-14h-11.2c-1.5 0-3.2-1.2-3.7-2.7l-2.9-8.7c-0.5-1.5-2.2-2.7-3.7-2.7h-31.9c-1.5 0-3.2 1.2-3.7 2.7l-2.9 8.7c-0.5 1.5-2.2 2.7-3.7 2.7h-11.2c-5.2 0-9.4 4.2-9.4 9.4v42.2c0 5.2 4.2 9.4 9.4 9.4h74.9c5.2 0 9.4-4.2 9.4-9.4v-42.3c0-5.1-4.2-9.3-9.4-9.3zm-37.4 51.5c-12.9 0-23.4-10.5-23.4-23.4s10.5-23.4 23.4-23.4 23.4 10.5 23.4 23.4-10.5 23.4-23.4 23.4zm34.2-35.6c-1.8 0-3.3-1.5-3.3-3.3s1.5-3.3 3.3-3.3 3.3 1.5 3.3 3.3c-0.1 1.8-1.5 3.3-3.3 3.3z"/>
+   </g>
+  </g>
+ </g>
+</svg>

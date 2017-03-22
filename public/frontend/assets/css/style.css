@@ -1,0 +1,137 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
+
+/*	################################################################
+	1. GENERAL STRUCTURES
+################################################################# */
+	* { 
+		margin: 0;
+		padding: 0px;
+	} 
+
+body { 
+	padding-top: 50px;
+	/*background: #ffffff;*/ 
+	background: #ccc; 
+	margin: 0; 
+	height: 100%; 
+	color: #384452;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	}
+
+body .starter-template {
+	background: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+}
+
+p { 
+	padding: 0; 
+	margin-bottom: 12px; 
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 14px; 
+	line-height: 24px;
+	color: #384452; 
+	margin-top: 10px; 
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+a { 
+	padding: 0;
+	margin: 0;
+	text-decoration: none; 
+	-webkit-transition: background-color .4s linear, color .4s linear;
+	-moz-transition: background-color .4s linear, color .4s linear;
+	-o-transition: background-color .4s linear, color .4s linear;
+	-ms-transition: background-color .4s linear, color .4s linear;
+	transition: background-color .4s linear, color .4s linear;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color:#01b2fe;
+}
+
+::-moz-selection  {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+::selection {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31;
+}
+
+.centered {
+	text-align: center
+}
+
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+
+
+/*	################################################################
+	2. HOME PAGE
+################################################################# */
+
+/* override bootstrap il video deve essere allineato con la slide a sx*/
+div.prodotti_freschi div.embed-responsive-4by3 {
+    padding-bottom: 60%;
+}
+
+
+
+
+
+/*	################################################################
+	3. GOOGLE MAP
+################################################################# */
+
+#map {
+	height: 400px;
+    width: 100%;
+}
+
+
+/*	################################################################
+	4. PARALLAX
+################################################################# */
+
+.parallax {
+    /* The image used */
+    background-image: url("images/parallax/pane.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*
+Some mobile devices have a problem with background-attachment: fixed. However, you can use media queries to turn off the parallax effect for mobile devices:
+ */
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}

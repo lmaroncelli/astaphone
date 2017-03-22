@@ -376,7 +376,7 @@ class HomePageController extends AdminController
       }
 
 
-      
+    
       public function modifySEOFileds(Request $request)
         {
         $homepage = $this->homepage;

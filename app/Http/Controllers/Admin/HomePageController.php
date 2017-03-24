@@ -22,7 +22,7 @@ class HomePageController extends AdminController
 
           $this->slide_header = Slide::with(['immagini'])->titolo('hp_slide_header')->first();
 
-          $this->slide_freschi = Slide::with(['immagini'])->titolo('hp_slide_freschi')->first();
+          $this->video_presentazione = Slide::with(['immagini'])->titolo('hp_video_presentazione')->first();
 
           $this->slide_confezionati = Slide::with(['immagini'])->titolo('hp_slide_confezionati')->first();
           
@@ -60,10 +60,11 @@ class HomePageController extends AdminController
     public function edit()
       {
       $slide_header = $this->slide_header;
+      $video_presentazione = $this->video_presentazione;
       $slide_footer = $this->slide_footer;
       
       $homepage = CustomPage::first();
-      return view('admin.pagine.homepage.form', compact('slide_header','slide_footer', 'homepage'));
+      return view('admin.pagine.homepage.form', compact('slide_header', 'video_presentazione', 'slide_footer', 'homepage'));
       }
 
     /**
@@ -214,16 +215,16 @@ class HomePageController extends AdminController
 
 
     
-    public function uploadSlideProdttiFreschi(Request $request)
+    public function uploadVideoPresentazione(Request $request)
     {    
-        $slide_freschi = $this->slide_freschi;
+        $video_presentazione = $this->video_presentazione;
 
-        $slider_id = $slide_freschi->id;
+        $slider_id = $video_presentazione->id;
 
         $tw = 100;
         $th = 86;
 
-        return $this->_uploadSlide($request, $slider_id, 'homepage/slideProdotti', $tw, $th);
+        return $this->_uploadSlide($request, $slider_id, 'homepage/slideHeader', $tw, $th);
     }
 
     public function uploadSlideProdttiConfezionati(Request $request)

@@ -17,7 +17,7 @@ class RenameTblHomePages extends Migration
         // droppo le FK che si chiamano con il nome della tabella vecchia
         Schema::table('tblHomePages', function(Blueprint $table) {
             $table->dropForeign('tblHomePages_header_slide_id_foreign');
-            $table->dropForeign('tblHomePages_prodotti_freschi_slide_id_foreign');
+            $table->dropForeign('tblHomePages_video_presentazione_slide_id_foreign');
             $table->dropForeign('tblHomePages_prodotti_confezionati_slide_id_foreign');
             $table->dropForeign('tblHomePages_footer_slide_id_foreign');
         });
@@ -28,7 +28,7 @@ class RenameTblHomePages extends Migration
         // ricreo le FK con il nome della tabella nuova
         Schema::table('tblCustomPages', function (Blueprint $table) {
             $table->foreign('header_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
-            $table->foreign('prodotti_freschi_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
+            $table->foreign('video_presentazione_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
             $table->foreign('prodotti_confezionati_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
             $table->foreign('footer_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
         });
@@ -46,7 +46,7 @@ class RenameTblHomePages extends Migration
         // droppo le FK che si chiamano con il nome della tabella vecchia
         Schema::table('tblCustomPages', function(Blueprint $table) {
             $table->dropForeign('tblCustomPages_header_slide_id_foreign');
-            $table->dropForeign('tblCustomPages_prodotti_freschi_slide_id_foreign');
+            $table->dropForeign('tblCustomPages_video_presentazione_slide_id_foreign');
             $table->dropForeign('tblCustomPages_prodotti_confezionati_slide_id_foreign');
             $table->dropForeign('tblCustomPages_footer_slide_id_foreign');
         });
@@ -57,7 +57,7 @@ class RenameTblHomePages extends Migration
         // ricreo le FK con il nome della tabella nuova
         Schema::table('tblHomePages', function (Blueprint $table) {
             $table->foreign('header_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
-            $table->foreign('prodotti_freschi_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
+            $table->foreign('video_presentazione_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
             $table->foreign('prodotti_confezionati_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
             $table->foreign('footer_slide_id')->references('id')->on('tblSlide')->onDelete('cascade');
         });

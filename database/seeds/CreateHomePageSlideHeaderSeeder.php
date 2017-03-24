@@ -20,7 +20,7 @@ class CreateHomePageSlideHeaderSeeder extends Seeder
            ],
            [
            'id' => 2,
-           'titolo' => 'hp_slide_freschi'
+           'titolo' => 'hp_video_presentazione'
            ],
            [
            'id' => 3,           

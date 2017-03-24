@@ -100,7 +100,80 @@
     </div>
 
     <hr>
+
+    {{--  VIDEO PRESENTAZIONE  --}}
     
+    <div class="videoPresentazione">    
+        <div class="row">
+        <h2>Video presentazione</h2>
+        </div>
+
+        @if ($video_presentazione->immagini->count())
+          <form  method="POST" action="{{ route('homepage.modifySlideHeader') }}">
+          {{ csrf_field() }}
+          <input type="hidden" name="slide_id" value="{{$video_presentazione->id}}">
+          
+          @foreach ($video_presentazione->immagini as $immagine)
+          <div class="row">
+          
+          <div class="col-md-3"> 
+            @if ( strpos($immagine->mime, 'video') !== false  )
+              <img src=" {{ asset('frontend_new/assets/img/icon/video.png') }}" alt="video">
+            @else
+              <img src="{{ url('thumbs/'.$immagine->nome) }}" width="200" height="104">
+            @endif
+          
+          </div>
+          
+          <div class="col-md-8">             
+    <textarea class="form-control" rows="3" name="descrizione_{{$immagine->id}}">{{old('descrizione_'.$immagine->descrizione, isset($immagine->descrizione) ? $immagine->descrizione : null)}}</textarea>
+          </div>        
+            
+          <div class="col-md-1">
+            <button type="button" class="btn btn-default delete_image_slide" data-id="{{$immagine->id}}">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </div>
+          
+          </div>
+          @endforeach
+
+          <div class="row">
+            <button type="submit" class="btn btn-primary">Modifica descrizioni</button>
+          </div>
+          
+          </form>
+         @else
+          <div class="row">
+            <p>Nessuna immagine caricata ancora</p>
+          </div>
+        @endif
+    </div>
+
+    <br>
+    <div class="row">
+      <form  method="POST" action="{{ route('homepage.uploadVideoPresentazione') }}" class="dropzone"  enctype="multipart/form-data" id="formUploadVideoPresentazione">
+        {{ csrf_field() }}
+        <input type="hidden" name="slide_id" value="{{$video_presentazione->id}}">
+      </form>
+    
+
+      <div class="dz-preview dz-file-preview"  id="preview-template-video-presentazione" style="display: none;">
+        <div class="dz-details">
+          <div class="dz-filename"><span data-dz-name></span></div>
+          <div class="dz-size" data-dz-size></div>
+          <img data-dz-thumbnail />
+        </div>
+        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress></span></div>
+        {{-- <div class="dz-success-mark"><span>✔</span></div>
+        <div class="dz-error-mark"><span>✘</span></div> --}}
+        <div class="dz-error-message"><span data-dz-errormessage></span></div>
+      </div>
+
+    </div>
+
+    <hr>
+    {{-- FINE VIDEO PRESENTAZIONE --}}
 
  <div class="row">
     <h2>Mappa</h2>
@@ -410,13 +483,48 @@
               };
 
 
+              Dropzone.options.formUploadVideoPresentazione = {
+                paramName: "file", // The name that will be used to transfer the file
+                maxFilesize: 20, // MB
+                acceptedFiles: ".jpeg,.jpg,.png,.gif,.mp4",
+                dictDefaultMessage: "Clicca o trascina qui i file da caricare per il video di presentazione",
+                //previewTemplate: document.getElementById('preview-template-video-presentazione').innerHTML,
+                
+                accept: function(file, done) {
+                  if (file.name == "xxx.jpg") {
+                    done("Naha, you don't.");
+                  }
+                  else { done(); }
+                },
+                
+                init: function () {
+                  var error = 0;
+                  this.on('error', function(file, response) {
+                      $('#preview-template-video-presentazione').find('.dz-error-message').html(response);
+                      $('#preview-template-video-presentazione').fadeIn();
+                      error = 1;
+                  });
+
+                  this.on("complete", function (file) {
+                    if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                      if(!error)
+                        setTimeout(function(){ location.reload(); }, 1000);
+                    }
+                  });
+
+                
+                }
+
+                };
+
+
 
             Dropzone.options.formUploadSlideFooter = {
               paramName: "file", // The name that will be used to transfer the file
               maxFilesize: 2, // MB
               acceptedFiles: ".jpeg,.jpg,.png,.gif",
               dictDefaultMessage: "Clicca o trascina qui i file da caricare nella footer slide",
-              //previewTemplate: document.getElementById('preview-template-silde-header').innerHTML,
+              //previewTemplate: document.getElementById('preview-template-silde-footer').innerHTML,
               
               accept: function(file, done) {
                 if (file.name == "xxx.jpg") {

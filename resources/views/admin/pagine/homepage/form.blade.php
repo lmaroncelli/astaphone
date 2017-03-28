@@ -108,6 +108,18 @@
         <h2>Video presentazione</h2>
         </div>
 
+        <form  method="POST" action="{{ route('homepage.setVideoURL') }}">
+          {{ csrf_field() }}
+        <div class="form-group">
+          <label for="nome">URL esterno</label>
+          <input type="text" class="form-control" id="url_video_presentazione" placeholder="SEO TITLE" name="url_video_presentazione" value="{{old('url_video_presentazione', isset($homepage->url_video_presentazione) ? $homepage->url_video_presentazione : null)}}">
+        </div>
+          <div class="row">
+            <button type="submit" class="btn btn-primary">Carica url esterno</button>
+          </div>
+        </form>
+        <br>
+        <hr>
         @if ($video_presentazione->immagini->count())
           <form  method="POST" action="{{ route('homepage.modifySlideHeader') }}">
           {{ csrf_field() }}

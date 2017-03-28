@@ -571,13 +571,13 @@ li.w3pages .dropdown-menu > li > a:hover{
     border: none;
 }
 .video-img {
-    background: url(../images/2.jpg)no-repeat right center;
+    background: url(../images/video_presentazione.png)no-repeat left top;
     -webkit-background-size: cover;
     background-size: cover;
     -moz-background-size: cover;
 	-o-background-size: cover;
 	-ms-background-size: cover;
-	min-height: 455px;
+	min-height: 348px;
 }
 .video-img a {
     display: inline-block;

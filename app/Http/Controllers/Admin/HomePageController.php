@@ -387,4 +387,16 @@ class HomePageController extends AdminController
         return redirect()->route('homepage.edit')->with('status', 'Homepage aggiornata correttamente!');
         }
 
+
+      public function setVideoURL(Request $request)
+        {
+        $homepage = $this->homepage;
+        $homepage->fill($request->all());
+        $homepage->save();
+
+        return redirect()->route('homepage.edit')->with('status', 'Homepage aggiornata correttamente!');
+        }
+
+        
+
 }

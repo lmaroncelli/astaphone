@@ -147,6 +147,18 @@ class SiteController extends Controller
 
 			$this->_getHeaderImages($slide_header, $first_header_image, $header_images, $first_desc_image, $desc_images, $video);
 
+		
+			/* CHECK VIDEO PRESENTAZIONE */
+			$url_video_presentazione = null;
+			if (!empty($homepage->url_video_presentazione)) 
+				{
+				$url_video_presentazione = $homepage->url_video_presentazione;
+				} 
+			elseif(!is_null($homepage->video_presentazione_slide_id))
+				{
+				$video_slide = Slide::with(['immagini'])->titolo('hp_video_presentazione')->first();
+				$url_video_presentazione = url($video_slide->immagini->nome);
+				}
 
 
 			///////////////////////////////////////////////////////////////
@@ -155,7 +167,7 @@ class SiteController extends Controller
 			$prodotti = Prodotto::all()->take(2);
 
 
-			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'homepage','prodotti'));
+			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'url_video_presentazione', 'homepage','prodotti'));
 			} 
 		else 
 			{

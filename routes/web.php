@@ -88,6 +88,9 @@ Route::group(['middleware' => ['admin']], function () {
 		Route::post('admin/homepage/uploadSlideProdttiConfezionati', ['as' => 'homepage.uploadSlideProdttiConfezionati', 'uses' => 'Admin\HomePageController@uploadSlideProdttiConfezionati']);
 
 		Route::post('admin/homepage/modifySEOFileds', ['as' => 'homepage.modifySEOFileds', 'uses' => 'Admin\HomePageController@modifySEOFileds']);
+		Route::post('admin/homepage/setVideoURL', ['as' => 'homepage.setVideoURL', 'uses' => 'Admin\HomePageController@setVideoURL']);
+
+		
 
 
 		/* CUSTOM PAGE */

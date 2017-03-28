@@ -38,16 +38,17 @@
 		<div class="banner-bottom">
 			<div class="container">
 				<div class="col-md-5 wthree_banner_bottom_left">
-					<div class="video-img">
-						<a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-							<span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
-						</a>
-					</div> 
+					@if (!is_null($url_video_presentazione))
+						<div class="video-img">
+							<a class="play-icon popup-with-zoom-anim" href="#small-dialog">
+								<span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
+							</a>
+						</div> 
 						<!-- pop-up-box -->     
 						<script src="{{ url('frontend_astaphone/assets/js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
 						<!--//pop-up-box -->
 						<div id="small-dialog" class="mfp-hide">
-							<iframe src="https://www.youtube.com/embed/ZQa6GUVnbNM"></iframe>
+							<iframe src="{{$url_video_presentazione}}"></iframe>
 						</div>
 						<script>
 							$(document).ready(function() {
@@ -65,6 +66,7 @@
 																							
 							});
 						</script>
+					@endif
 				</div>
 				<div class="col-md-7 wthree_banner_bottom_right">
 					<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">

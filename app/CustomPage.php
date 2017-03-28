@@ -17,6 +17,8 @@ class CustomPage extends Model
 	        'listingCategorie',
 	        'listingCaratteristiche',
 	        'header_slide_id',
+	        'video_presentazione_slide_id',
+	        'url_video_presentazione',
 	        'img_magliana',
 	        'desc_magliana',
 	        'img_cipro',

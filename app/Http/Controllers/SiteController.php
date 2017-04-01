@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
 use App\CategoriaRicetta;
 use App\CustomPage;
 use App\Http\Requests;
@@ -161,13 +162,21 @@ class SiteController extends Controller
 				}
 
 
+			////////////////////////
+			// CATEGORIE PRODOTTI //
+			////////////////////////
+			$categorie = Categoria::with(['prodotti'])->orderBy('nome')->get();
+			
+			//$categorie = Categoria::has('prodotti')->with(['prodotti'])->get();
+
+			
 			///////////////////////////////////////////////////////////////
 			// MOMENTANEAMENTE SELEZIONO SOLO I PRODOTTI CON LE IMMAGINI //
 			///////////////////////////////////////////////////////////////
 			$prodotti = Prodotto::all()->take(2);
 
 
-			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'url_video_presentazione', 'homepage','prodotti'));
+			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'url_video_presentazione', 'homepage','categorie', 'prodotti'));
 			} 
 		else 
 			{

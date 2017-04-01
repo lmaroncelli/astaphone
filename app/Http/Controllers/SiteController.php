@@ -11,6 +11,7 @@ use App\Prodotto;
 use App\Slide;
 use App\SlideCategorieProdotti;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 class SiteController extends Controller
 {
@@ -209,14 +210,16 @@ class SiteController extends Controller
 				$desc_footer_images = [];
 				$this->_getFooterImages($slide_footer,$footer_images,$desc_footer_images);
 
-				///////////////////////////////////////////////////////////////
-				// MOMENTANEAMENTE SELEZIONO SOLO I PRODOTTI CON LE IMMAGINI //
-				///////////////////////////////////////////////////////////////
-				//$prodotti = Prodotto::where('img_main' ,'!=','')->get();
-				$prodotti = Prodotto::all()->take(10);
+			
 
 
-				return view(strtolower($page->title),compact('video','first_header_image','header_images','first_desc_image','desc_images', 'footer_images', 'desc_footer_images','page','prodotti'));
+				//////////////////////////
+				// check if view exists //
+				//////////////////////////
+
+				View::exists(strtolower(str_slug($page->title))) ?	$page_to_render = strtolower(str_slug($page->title)) : $page_to_render = 'template';
+
+				return view(strtolower(str_slug($page_to_render)),compact('video','first_header_image','header_images','first_desc_image','desc_images', 'footer_images', 'desc_footer_images','page'));
 
 				} 
 			else 

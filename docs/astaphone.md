@@ -13,3 +13,9 @@ le categorie sono:
 3. Computer
 4. Notebook
 5. I/O devices
+
+
+
+- in home page dalle immagini dei prodotti in categoria tolgo il fasthover (adesso c'è solo un'immagine per ogni prodotto) commentando un pezzo di fasthover.css
+
+ 

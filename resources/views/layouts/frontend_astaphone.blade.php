@@ -100,7 +100,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	se volgio posso fare l'overwrite mettendo il menu tra @section @overwrite in una pagina figlia
 	 --}}
     @yield('footer')
+	
+	@yield('feed_map')    
 
+	<script src="{{ url('frontend_astaphone/assets/js/picla.js') }}"></script>
+
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqImK9lRFJdcFLSt0W-t_QQC70fCsCwV0&callback=initMap">
+    </script>
+    @yield('script')
 
 </body>
 </html>

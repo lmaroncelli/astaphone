@@ -139,6 +139,8 @@ class SiteController extends Controller
 			$homepage = CustomPage::first();
 
 			$slide_header = Slide::with(['immagini'])->titolo('hp_slide_header')->first();
+
+			$slide_footer = Slide::with(['immagini'])->titolo('hp_slide_footer')->first();
 			
 			
 			$first_header_image = null;
@@ -177,7 +179,13 @@ class SiteController extends Controller
 			$prodotti = Prodotto::all()->take(2);
 
 
-			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'url_video_presentazione', 'homepage','categorie', 'prodotti'));
+			$footer_images = [];
+			$desc_footer_images = [];
+
+			$this->_getFooterImages($slide_footer,$footer_images,$desc_footer_images);
+
+
+			return view('home',compact('video','first_header_image','header_images','first_desc_image','desc_images', 'url_video_presentazione', 'footer_images', 'desc_footer_images', 'homepage','categorie', 'prodotti'));
 			} 
 		else 
 			{

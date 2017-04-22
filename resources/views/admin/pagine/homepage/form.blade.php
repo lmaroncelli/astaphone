@@ -203,17 +203,17 @@
 
             <ul class="nav nav-tabs">
               <li class="active">
-                <a  href="#1map" data-toggle="tab">CELIACHIAMO LAB</a>
+                <a  href="#1map" data-toggle="tab">1 POINT</a>
               </li>
-              <li><a href="#2map" data-toggle="tab">CELIACHIAMO SHOP</a>
+              <li><a href="#2map" data-toggle="tab">2 POINT</a>
               </li>
-              <li><a href="#3map" data-toggle="tab">CELIACHIAMO TIBURTINA</a>
+              <li><a href="#3map" data-toggle="tab">3 POINT</a>
               </li>
             </ul>
             
             <div class="tab-content ">
               <div class="tab-pane active" id="1map">
-                <h3>Inserisci i dati per "Celiachiamo LAB"</h3>
+                <h3>Inserisci i dati per "1 POINT"</h3>
                 <label for="gm_lat">Latitudine</label>
                 <input type="text" class="form-control" id="gm_lat" placeholder="41.8505419" name="gm_lat" value="{{old('gm_lat', isset($homepage->gm_lat) ? $homepage->gm_lat : null)}}">
                 <label for="gm_long">Longitudine</label>
@@ -248,7 +248,7 @@
               </div>
               <div class="tab-pane" id="2map">
                
-               <h3>Inserisci i dati per "Celiachiamo SHOP"</h3>
+               <h3>Inserisci i dati per "2 POINT"</h3>
                <label for="gm_lat2">Latitudine</label>
                <input type="text" class="form-control" id="gm_lat2" placeholder="41.8505419" name="gm_lat2" value="{{old('gm_lat2', isset($homepage->gm_lat2) ? $homepage->gm_lat2 : null)}}">
                <label for="gm_long2">Longitudine</label>
@@ -283,7 +283,7 @@
               </div>
               <div class="tab-pane" id="3map">
 
-                <h3>Inserisci i dati per "Celiachiamo TIBURTINA"</h3>
+                <h3>Inserisci i dati per "3 POINT"</h3>
                 <label for="gm_lat3">Latitudine</label>
                 <input type="text" class="form-control" id="gm_lat3" placeholder="41.8505419" name="gm_lat3" value="{{old('gm_lat3', isset($homepage->gm_lat3) ? $homepage->gm_lat3 : null)}}">
                 <label for="gm_long3">Longitudine</label>

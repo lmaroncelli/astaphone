@@ -322,7 +322,7 @@ class HomePageController extends AdminController
         Storage::delete([$homepage->$colname]);
           }
        
-        $homepage->$colname = null;
+        $homepage->$colname = '';
 
         $homepage->save();        
 

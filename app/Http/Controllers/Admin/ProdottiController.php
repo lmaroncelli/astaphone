@@ -150,7 +150,11 @@ class ProdottiController extends AdminController
         $prodotto = Prodotto::find($id);
         $prodotto->fill($request->except('img_main'));
         
-        $prodotto->img_main = $this->_manage_image_prodotto($request);
+        if (!is_null($request->file('img_main')))
+          {
+          $prodotto->img_main = $this->_manage_image_prodotto($request);
+          }
+ 
         $prodotto->save();
 
         $caratteristiche = $request->get('caratteristiche');

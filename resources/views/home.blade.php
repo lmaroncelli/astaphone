@@ -88,7 +88,12 @@
 											</div> 
 											<h5><a href="single.html">{{$prodotto->nome}}</a></h5>
 											<div class="simpleCart_shelfItem">
-												<p><span>{{$prodotto->prezzo}}</span> <i class="item_price">{{$prodotto->offerta}}</i></p>
+												<p>
+													<span>{{$prodotto->prezzo}}</span> 
+													@if ($prodotto->prezzo_offerta > 0)
+														<i class="item_price">{{$prodotto->offerta}}</i>
+													@endif
+												</p>
 												<form action="#" method="post">
 													<input type="hidden" name="cmd" value="_cart" />
 													<input type="hidden" name="add" value="1" /> 

@@ -10,10 +10,8 @@
 	<table class="table table-striped">
        <thead>
            <tr>
-               <th>Codice</th> 
                <th>Nome</th> 
-               <th>Disponibile</th> 
-               <th>Scadenza</th> 
+               <th></th>
                <th>Prezzo</th> 
                <th>Prezzo Offerta</th> 
                <th>Novità</th> 
@@ -27,10 +25,8 @@
 			@if (count($prodotti))
 	           @foreach ($prodotti as $count => $prodotto)
 	               <tr>
-	                   <td><a href="{{ route('prodotti.edit',$prodotto->id) }}">{{$prodotto->codice}}</a></td>
-                     <td>{{$prodotto->codice}}</td>
-                     <td>{{$prodotto->disponibile}}</td>
-                     <td>{{$prodotto->scadenza}}</td>
+	                   <td><a href="{{ route('prodotti.edit',$prodotto->id) }}">{{$prodotto->nome}}</a></td>
+                      <td> <img src="{{ url('thumbs/'.$prodotto->img_main) }}" alt="{{$prodotto->nome}}"></td>   
                      <td>{{$prodotto->prezzo}}</td>
                      <td>{{$prodotto->prezzo_offerta}}</td>
                      <td>{{$prodotto->novita}}</td>

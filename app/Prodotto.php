@@ -48,8 +48,15 @@ class Prodotto extends Model
   ///////////////////////////////////////////////////////////
   public function getPrezzoAttribute($value)
       {
-          return $this->attributes['prezzo'] = (!is_null($this->prezzo_offerta) && $this->prezzo_offerta > 0) ? $this->prezzo_offerta : $value;
+          //return $this->attributes['prezzo'] = (!is_null($this->prezzo_offerta) && $this->prezzo_offerta > 0) ? str_replace('.', ',', $this->prezzo_offerta) : str_replace('.', ',', $value);
+          return $this->attributes['prezzo'] = str_replace('.', ',', $value);
       }
+
+
+  public function getPrezzoOffertaAttribute($value)
+    {
+        return $this->attributes['prezzo_offerta'] = str_replace('.', ',', $value);
+    }
 
 
   public function setPrezzoAttribute($value)
@@ -58,6 +65,11 @@ class Prodotto extends Model
           {
           $value = 0.00;
           }
+        else 
+          {
+          $value = str_replace(',', '.', $value);
+          }
+
         $this->attributes['prezzo'] = $value;
     }
 
@@ -66,6 +78,10 @@ class Prodotto extends Model
         if ($value == '') 
           {
           $value = 0.00;
+          }
+         else 
+          {
+          $value = str_replace(',', '.', $value);
           }
         $this->attributes['prezzo_offerta'] = $value;
     }

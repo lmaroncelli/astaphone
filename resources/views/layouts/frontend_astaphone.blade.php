@@ -12,11 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>
-	@if (isset($page))
-	  {{$page->title}}
-	@else
 	  @yield('seo_title')
-	@endif
 </title>
 
 
@@ -30,8 +26,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- Custom Theme files -->
 <link href="{{ url('frontend_astaphone/assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
 <link href="{{ url('frontend_astaphone/assets/css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
-<link href="{{ url('frontend_astaphone/assets/css/fasthover.css') }}" rel="stylesheet" type="text/css" media="all" />
-<link href="{{ url('frontend_astaphone/assets/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+
+
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
 <link href="{{ url('frontend_astaphone/assets/css/font-awesome.css') }}" rel="stylesheet"> 
@@ -70,7 +66,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="header" id="home1">
 		<div class="container">
 			<div class="w3l_logo">
-				<h1><a href="index.html">Electronic Store<span>Your stores. Your place.</span></a></h1>
+				<h1><a href="index.html">Astaphone<span>Il tuo negozio.<br>Come a casa.</span></a></h1>
 			</div>
 		</div>
 	</div>

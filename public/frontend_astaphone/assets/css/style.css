@@ -927,6 +927,19 @@ li.w3pages .dropdown-menu > li > a:hover{
     height: 1px;
     width: 10%;
 }
+
+
+h3.servizi:before {
+    content: '';
+    position: absolute;
+    top: 27%;
+    left: 19%;
+    background: #ff5063;
+    height: 1px;
+    width: 10%;   
+}
+
+
 .special-deals h2:after, .in-vetrina h2:after ,.new-products h3:after,.top-brands h3:after,.w3l_related_products h3:after,.team h3:after,.mail h3:after,h3.agileits-title:after{
 	content: '';
     position: absolute;
@@ -936,6 +949,17 @@ li.w3pages .dropdown-menu > li > a:hover{
     width: 10%;
     height: 1px;
 }
+
+h3.servizi:after {
+    content: '';
+    position: absolute;
+    top: 27%;
+    right: 19%;
+    background: #ff5063;
+    height: 1px;
+    width: 10%;   
+}
+
 .w3agile_special_deals_grids {
     margin: 3em 0 0;
 }
@@ -2413,6 +2437,18 @@ h2.typoh2{
 }
 
 
+/* FOOTER */
+/*picla js*/
+.label-image-footer {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: rgba(0,0,0,.40);
+    height: 100%;
+    padding: 0px;
+    padding-top: 70px;
+    text-align: center;
+}
 
 @media (max-width:1080px){
 .icon-box {
@@ -2559,12 +2595,12 @@ h2.typoh2{
 /*-- //faq --*/
 /*-- about --*/
 .w3ls_about_grid_left p{
-	color:#999;
+	color:#424341;
 	line-height:1.8em;
 	margin-bottom:2em;
 }
 .w3ls_about_grid_left2 p{
-	color:#999;
+	color:#424341;
 	line-height:1.8em;
 }
 .w3ls_about_grid_left1 {

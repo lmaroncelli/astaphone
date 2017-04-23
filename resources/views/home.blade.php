@@ -5,12 +5,12 @@
 
 
 @section('css')
+	<link href="{{ url('frontend_astaphone/assets/css/fasthover.css') }}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{{ url('frontend_astaphone/assets/css/popuo-box.css') }}" rel="stylesheet" type="text/css" media="all" />
+
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<link href="{{ url('frontend/assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
-@stop
 
-@section('title')
-	Astaphone.com
 @stop
 
 
@@ -196,12 +196,13 @@
 		<!-- top-gallery -->
 		<div class="top-brands">
 			<div class="container">
-				<h3>I nostri servizi</h3>
+				<h3 class="servizi">I nostri principali servizi</h3>
 				<div class="sliderfig">
 					<ul id="flexiselDemo1">			
 						@foreach ($footer_images as $key => $img)
 							<li>
-								<img src="{{$img}}" alt="{{$desc_footer_images[$key]}}" class="img-responsive picla" alt="ciao" />								
+								<img src="{{$img}}" data-label-class="label-image-footer" class="img-responsive picla" alt="{{$desc_footer_images[$key]}}" />								
+								{{-- <div class="label-image-footer" style="position: absolute; bottom: 0px; width: 100%; box-sizing: border-box;">dsdsdsdsdsd</div> --}}
 							</li>
 						@endforeach
 					</ul>

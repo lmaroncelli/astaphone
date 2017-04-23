@@ -21,6 +21,15 @@
     </div>
 
     <div class="form-group">
+      <label for="nome">SEO TITLE</label>
+      <input type="text" class="form-control" id="seo_title" placeholder="SEO TITLE" name="seo_title" value="{{old('seo_title', isset($page->seo_title) ? $page->seo_title : null)}}">
+    </div>
+    <div class="form-group">
+      <label for="nome">SEO DESCRIPTION</label>
+      <textarea class="form-control" rows="3" name="seo_description">{{old('seo_description', isset($page->seo_description) ? $page->seo_description : null)}}</textarea>
+    </div>
+
+    <div class="form-group">
       <label for="">Header Slide</label>
       <select class="form-control" name="header_slide_id">
         @foreach ($slideHeader as $key => $titolo)

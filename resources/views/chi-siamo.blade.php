@@ -9,10 +9,6 @@
 	<link href="{{ url('frontend/assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
 @stop
 
-@section('title')
-	Astaphone.com
-@stop
-
 
 @section('banner')
 	<!-- //breadcrumbs --> 
@@ -35,7 +31,7 @@
 	<div class="breadcrumb_dress">
 		<div class="container">
 			<ul>
-				<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
+				<li><a href="{{ url('/') }}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a> <i>/</i></li>
 				<li>{{$page->title}}</li>
 			</ul>
 		</div>
@@ -44,8 +40,19 @@
 
 @section('content')
 	 
-<div class="container_content">
-	{!!$page->content!!}	
+<div class="about">
+	<div class="container">	
+		<div class="w3ls_about_grids">
+			<div class="col-md-6 w3ls_about_grid_left">
+				{!!$page->content!!}
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-md-6 w3ls_about_grid_right">
+				<img src="images/52.jpg" alt=" " class="img-responsive" />
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
 </div>
  
 @stop

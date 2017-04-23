@@ -36,7 +36,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @yield('css')
 
 <!-- js -->
-<script src="{{ url('frontend_astaphone/assets/js/jquery.min.js') }}"></script>
+<script src="{{ url('frontend_astaphone/assets/js/jquery-1.10.2.js') }}"></script>
 <link rel="stylesheet" href="{{ url('frontend_astaphone/assets/css/jquery.countdown.css') }}" /> <!-- countdown --> 
 <!-- //js -->  
 <!-- web fonts --> 

@@ -7,6 +7,11 @@
 @section('css')
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<link href="{{ url('frontend/assets/css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+
+
+	 <!-- Owl-Carousel 2-->
+	<link href="{{ url('frontend_astaphone/assets/css/owl2/owl.carousel.min.css') }}" rel="stylesheet">
+	<link href="{{ url('frontend_astaphone/assets/css/owl2/owl.theme.default.min.css') }}" rel="stylesheet">
 @stop
 
 
@@ -48,7 +53,13 @@
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-md-6 w3ls_about_grid_right">
-				<img src="images/52.jpg" alt=" " class="img-responsive" />
+				<div class="owl-carousel owl-theme" id="owlf">
+	                @foreach ($slide1->immagini as $count => $immagine)
+	                    <div class="item">                           
+	                        <img class="img-responsive" src="{{ url('images/'.$immagine->nome) }}"/>
+	                    </div>
+	                 @endforeach
+	            </div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -59,12 +70,21 @@
 
 
 @section('script')
+	<!-- Owl-Carousel 2-->
+	<script src="{{ url('frontend_astaphone/assets/js/owl2/owl.carousel.min.js') }}"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src={{ url('frontend/assets/js/ie10-viewport-bug-workaround.js') }}></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-		  
+		  // OwlCarousel N2
+		  $("#owlf").owlCarousel({
+		  		items:1,
+		  		responsiveClass:true,
+		  		nav:true,
+		  		/*autoWidth:true*/
+
+		  });
 		});
 	</script>
 @stop

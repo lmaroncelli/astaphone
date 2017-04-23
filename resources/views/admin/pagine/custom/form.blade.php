@@ -10,15 +10,16 @@
 
 @section('content')
     
-    <form  method="POST" action="{{ route('custompage.save', $page->id) }}">
+    <form  method="POST" action="{{ route('custompage.save', $page->id) }}" enctype="multipart/form-data">
 
     {{ csrf_field() }}
-
+    
 
     <div class="form-group">
       <label for="nome">URI</label>
       <input type="text" class="form-control" id="uri" placeholder="URI" name="uri" value="{{old('uri', isset($page->uri) ? $page->uri : null)}}">
     </div>
+
 
     <div class="form-group">
       <label for="nome">SEO TITLE</label>
@@ -45,140 +46,253 @@
       </div>
     
     <hr>
+
+
+    <div class="form-group">
+      <label for="">Slide Confezionati</label>
+      <select class="form-control" name="prodotti_confezionati_slide_id">
+        @foreach ($slideConfezionati as $key => $titolo)
+          <option value="{{$key}}" @if( old('prodotti_confezionati_slide_id') == $key || (isset($page->prodotti_confezionati_slide_id) && $page->prodotti_confezionati_slide_id == $key)) selected @endif>{{$titolo}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    <hr>
     
+    <div class="form-group">
+      <label for="">Categorie Prodotti Slide</label>
+      <select class="form-control" name="categorie_prodotti_slide_id">
+        @foreach ($slideCategorieProdotti as $key => $titolo)
+          <option value="{{$key}}" @if( old('categorie_prodotti_slide_id') == $key || (isset($page->categorie_prodotti_slide_id) && $page->categorie_prodotti_slide_id == $key)) selected @endif>{{$titolo}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="">Categorie Prodotti Slide (2)</label>
+      <select class="form-control" name="categorie_prodotti_altra_slide_id">
+        @foreach ($slideCategorieProdotti as $key => $titolo)
+          <option value="{{$key}}" @if( old('categorie_prodotti_altra_slide_id') == $key || (isset($page->categorie_prodotti_altra_slide_id) && $page->categorie_prodotti_altra_slide_id == $key)) selected @endif>{{$titolo}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    
+    <hr />
+
+
+    <div class="form-group">
+      <label for="codice">Widget 3 colonne</label>
+      <select class="form-control" name="three_columns_widget_id">
+        @foreach ($widgetThreeColumns as $key => $nome)
+          <option value="{{$key}}" @if( old('three_columns_widget_id') == $key || (isset($page->three_columns_widget_id) && $page->three_columns_widget_id == $key)) selected @endif>{{$nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    
+     <hr />
+
+
+    <div class="form-group">
+      <label for="codice">Widget Prodotti Freschi</label>
+      <select class="form-control" name="prodotti_freschi_widget_id">
+        @foreach ($widgetProdottiFreschi as $key => $nome)
+          <option value="{{$key}}" @if( old('prodotti_freschi_widget_id') == $key || (isset($page->prodotti_freschi_widget_id) && $page->prodotti_freschi_widget_id == $key)) selected @endif>{{$nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="codice">Widget Prodotti Confezionati</label>
+      <select class="form-control" name="prodotti_confezionati_widget_id">
+        @foreach ($widgetProdottiConfezionati as $key => $nome)
+          <option value="{{$key}}" @if( old('prodotti_confezionati_widget_id') == $key || (isset($page->prodotti_confezionati_widget_id) && $page->prodotti_confezionati_widget_id == $key)) selected @endif>{{$nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="codice">Widget Prodotti</label>
+      <select class="form-control" name="prodotti_widget_id">
+        @foreach ($widgetProdotti as $key => $nome)
+          <option value="{{$key}}" @if( old('prodotti_widget_id') == $key || (isset($page->prodotti_widget_id) && $page->prodotti_widget_id == $key)) selected @endif>{{$nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    <hr />
+  
+
+  <div class="row">
+     <h2>Info Aggiuntive</h2>
+   </div>
+
+   <div class="form-group">
+      
+         <div id="exTab4"> 
+
+           <ul class="nav nav-tabs">
+              @for ($i = 1; $i < 5; $i++)
+               <li @if ($i == 1) class="active" @endif>
+                 <a  href="#{{$i}}add" data-toggle="tab">INFO AGGIUNTIVA {{$i}}</a>
+               </li>
+              @endfor
+           </ul>
+           
+           <div class="tab-content ">
+            @for ($i = 1; $i < 5; $i++)
+              <?php 
+              $titolo = "titolo_add_".$i;
+              $content = "content_add_".$i;
+              ?>
+             <div class="tab-pane @if ($i == 1) active @endif" id="{{$i}}add">
+                <h3>Inserisci i dati per info aggiuntiva {{$i}}</h3>
+               <label for="{{$titolo}}">Titolo</label>
+               <input type="text" class="form-control" id="{{$titolo}}" placeholder="" name="{{$titolo}}" value="{{old($titolo, isset($page->$titolo) ? $page->$titolo : null)}}">
+               <label for="{{$content}}">Contenuto</label>
+               <textarea class="form-control" rows="3" name="{{$content}}" id="{{$content}}">{{old($content, isset($page->$content) ? $page->$content : null)}}</textarea>
+             </div>
+            @endfor
+           </div>
+          
+       </div> {{-- end exTab4 --}}
+     </div>
+  
+  <hr>
 
  <div class="row">
     <h2>Mappa</h2>
   </div>
 
-  <form  method="POST" action="{{ route('custompage.save_map') }}"  enctype="multipart/form-data">
-    {{ csrf_field() }}    
-    <div class="form-group">
-        <label for="gm_nome">Nome</label>
-        <input type="text" class="form-control" id="gm_nome" placeholder="Celiachiamo LAB" name="gm_nome" value="{{old('gm_nome', isset($page->gm_nome) ? $page->gm_nome : null)}}">
-        <label for="gm_indirizzo">Descrizione</label>
-        <textarea class="form-control" rows="3" name="gm_indirizzo" id="gm_indirizzo">{{old('gm_indirizzo', isset($page->gm_indirizzo) ? $page->gm_indirizzo : null)}}</textarea>
-          <br/>
-          <div id="exTab3"> 
+  
+  <div class="form-group">
+      <label for="gm_nome">Nome</label>
+      <input type="text" class="form-control" id="gm_nome" placeholder="Celiachiamo LAB" name="gm_nome" value="{{old('gm_nome', isset($page->gm_nome) ? $page->gm_nome : null)}}">
+      <label for="gm_indirizzo">Descrizione</label>
+      <textarea class="form-control" rows="3" name="gm_indirizzo" id="gm_indirizzo">{{old('gm_indirizzo', isset($page->gm_indirizzo) ? $page->gm_indirizzo : null)}}</textarea>
+        <br/>
+        <div id="exTab3"> 
 
-            <ul class="nav nav-tabs">
-              <li class="active">
-                <a  href="#1map" data-toggle="tab">CELIACHIAMO LAB</a>
-              </li>
-              <li><a href="#2map" data-toggle="tab">CELIACHIAMO SHOP</a>
-              </li>
-              <li><a href="#3map" data-toggle="tab">CELIACHIAMO TIBURTINA</a>
-              </li>
-            </ul>
-            
-            <div class="tab-content ">
-              <div class="tab-pane active" id="1map">
-                <h3>Inserisci i dati per "Celiachiamo LAB"</h3>
-                <label for="gm_lat">Latitudine</label>
-                <input type="text" class="form-control" id="gm_lat" placeholder="41.8505419" name="gm_lat" value="{{old('gm_lat', isset($page->gm_lat) ? $page->gm_lat : null)}}">
-                <label for="gm_long">Longitudine</label>
-                <input type="text" class="form-control" id="gm_long" placeholder="12.45956769999998" name="gm_long" value="{{old('gm_long', isset($page->gm_long) ? $page->gm_long : null)}}">
-                <label for="gm_info">Info Window</label>
-                <input type="text" class="form-control" id="gm_info" placeholder="Celiachiamo LAB" name="gm_info" value="{{old('gm_info', isset($page->gm_info) ? $page->gm_info : null)}}">
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a  href="#1map" data-toggle="tab">CELIACHIAMO LAB</a>
+            </li>
+            <li><a href="#2map" data-toggle="tab">CELIACHIAMO SHOP</a>
+            </li>
+            <li><a href="#3map" data-toggle="tab">CELIACHIAMO TIBURTINA</a>
+            </li>
+          </ul>
+          
+          <div class="tab-content ">
+            <div class="tab-pane active" id="1map">
+              <h3>Inserisci i dati per "Celiachiamo LAB"</h3>
+              <label for="gm_lat">Latitudine</label>
+              <input type="text" class="form-control" id="gm_lat" placeholder="41.8505419" name="gm_lat" value="{{old('gm_lat', isset($page->gm_lat) ? $page->gm_lat : null)}}">
+              <label for="gm_long">Longitudine</label>
+              <input type="text" class="form-control" id="gm_long" placeholder="12.45956769999998" name="gm_long" value="{{old('gm_long', isset($page->gm_long) ? $page->gm_long : null)}}">
+              <label for="gm_info">Info Window</label>
+              <input type="text" class="form-control" id="gm_info" placeholder="Celiachiamo LAB" name="gm_info" value="{{old('gm_info', isset($page->gm_info) ? $page->gm_info : null)}}">
 
-                <label for="titolo">Immagine Info</label>
-                @if (is_null($page->gm_info_img) || $page->gm_info_img == '')
-                  <div class="form-group">
-                    <input type="file" class="form-control" id="img" name="gm_info_img">
-                  </div>
-                @else
-                  <img src="{{ url('images/'.$page->gm_info_img) }}">
-                  <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info_img">
-                    <span class="glyphicon glyphicon-remove"></span>
-                  </button>
-                @endif
-
-                <label for="titolo">Icon marker</label>
-                 @if (is_null($page->gm_icon) || $page->gm_icon == '')
-                  <div class="form-group">
-                    <input type="file" class="form-control" id="img" name="gm_icon">
-                  </div>
-                @else
-                  <img src="{{ url('images/'.$page->gm_icon) }}">
-                  <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon">
-                    <span class="glyphicon glyphicon-remove"></span>
-                  </button>
-                @endif
-              
-              </div>
-              <div class="tab-pane" id="2map">
-               
-               <h3>Inserisci i dati per "Celiachiamo SHOP"</h3>
-               <label for="gm_lat2">Latitudine</label>
-               <input type="text" class="form-control" id="gm_lat2" placeholder="41.8505419" name="gm_lat2" value="{{old('gm_lat2', isset($page->gm_lat2) ? $page->gm_lat2 : null)}}">
-               <label for="gm_long2">Longitudine</label>
-               <input type="text" class="form-control" id="gm_long2" placeholder="12.45956769999998" name="gm_long2" value="{{old('gm_long2', isset($page->gm_long2) ? $page->gm_long2 : null)}}">
-               <label for="gm_info2">Info Window</label>
-               <input type="text" class="form-control" id="gm_info2" placeholder="Celiachiamo LAB" name="gm_info2" value="{{old('gm_info2', isset($page->gm_info2) ? $page->gm_info2 : null)}}">
-              
               <label for="titolo">Immagine Info</label>
-              @if (is_null($page->gm_info2_img) || $page->gm_info2_img == '')
+              @if (is_null($page->gm_info_img) || $page->gm_info_img == '')
                 <div class="form-group">
-                  <input type="file" class="form-control" id="img" name="gm_info2_img">
+                  <input type="file" class="form-control" id="img" name="gm_info_img">
                 </div>
               @else
-                <img src="{{ url('images/'.$page->gm_info2_img) }}">
-                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info2_img">
+                <img src="{{ url('images/'.$page->gm_info_img) }}">
+                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info_img">
                   <span class="glyphicon glyphicon-remove"></span>
                 </button>
               @endif
 
               <label for="titolo">Icon marker</label>
-               @if (is_null($page->gm_icon2) || $page->gm_icon2 == '')
+               @if (is_null($page->gm_icon) || $page->gm_icon == '')
                 <div class="form-group">
-                  <input type="file" class="form-control" id="img" name="gm_icon2">
+                  <input type="file" class="form-control" id="img" name="gm_icon">
                 </div>
               @else
-                <img src="{{ url('images/'.$page->gm_icon2) }}">
-                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon2">
+                <img src="{{ url('images/'.$page->gm_icon) }}">
+                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              @endif
+            
+            </div>
+            <div class="tab-pane" id="2map">
+             
+             <h3>Inserisci i dati per "Celiachiamo SHOP"</h3>
+             <label for="gm_lat2">Latitudine</label>
+             <input type="text" class="form-control" id="gm_lat2" placeholder="41.8505419" name="gm_lat2" value="{{old('gm_lat2', isset($page->gm_lat2) ? $page->gm_lat2 : null)}}">
+             <label for="gm_long2">Longitudine</label>
+             <input type="text" class="form-control" id="gm_long2" placeholder="12.45956769999998" name="gm_long2" value="{{old('gm_long2', isset($page->gm_long2) ? $page->gm_long2 : null)}}">
+             <label for="gm_info2">Info Window</label>
+             <input type="text" class="form-control" id="gm_info2" placeholder="Celiachiamo LAB" name="gm_info2" value="{{old('gm_info2', isset($page->gm_info2) ? $page->gm_info2 : null)}}">
+            
+            <label for="titolo">Immagine Info</label>
+            @if (is_null($page->gm_info2_img) || $page->gm_info2_img == '')
+              <div class="form-group">
+                <input type="file" class="form-control" id="img" name="gm_info2_img">
+              </div>
+            @else
+              <img src="{{ url('images/'.$page->gm_info2_img) }}">
+              <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info2_img">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            @endif
+
+            <label for="titolo">Icon marker</label>
+             @if (is_null($page->gm_icon2) || $page->gm_icon2 == '')
+              <div class="form-group">
+                <input type="file" class="form-control" id="img" name="gm_icon2">
+              </div>
+            @else
+              <img src="{{ url('images/'.$page->gm_icon2) }}">
+              <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon2">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            @endif
+
+            </div>
+            <div class="tab-pane" id="3map">
+
+              <h3>Inserisci i dati per "Celiachiamo TIBURTINA"</h3>
+              <label for="gm_lat3">Latitudine</label>
+              <input type="text" class="form-control" id="gm_lat3" placeholder="41.8505419" name="gm_lat3" value="{{old('gm_lat3', isset($page->gm_lat3) ? $page->gm_lat3 : null)}}">
+              <label for="gm_long3">Longitudine</label>
+              <input type="text" class="form-control" id="gm_long3" placeholder="12.45956769999998" name="gm_long3" value="{{old('gm_long3', isset($page->gm_long3) ? $page->gm_long3 : null)}}">
+              <label for="gm_info3">Info Window</label>
+              <input type="text" class="form-control" id="gm_info3" placeholder="Celiachiamo LAB" name="gm_info3" value="{{old('gm_info3', isset($page->gm_info3) ? $page->gm_info3 : null)}}">
+
+              <label for="titolo">Immagine Info</label>
+              @if (is_null($page->gm_info3_img) || $page->gm_info3_img == '')
+                <div class="form-group">
+                  <input type="file" class="form-control" id="img" name="gm_info3_img">
+                </div>
+              @else
+                <img src="{{ url('images/'.$page->gm_info3_img) }}">
+                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info3_img">
                   <span class="glyphicon glyphicon-remove"></span>
                 </button>
               @endif
 
-              </div>
-              <div class="tab-pane" id="3map">
-
-                <h3>Inserisci i dati per "Celiachiamo TIBURTINA"</h3>
-                <label for="gm_lat3">Latitudine</label>
-                <input type="text" class="form-control" id="gm_lat3" placeholder="41.8505419" name="gm_lat3" value="{{old('gm_lat3', isset($page->gm_lat3) ? $page->gm_lat3 : null)}}">
-                <label for="gm_long3">Longitudine</label>
-                <input type="text" class="form-control" id="gm_long3" placeholder="12.45956769999998" name="gm_long3" value="{{old('gm_long3', isset($page->gm_long3) ? $page->gm_long3 : null)}}">
-                <label for="gm_info3">Info Window</label>
-                <input type="text" class="form-control" id="gm_info3" placeholder="Celiachiamo LAB" name="gm_info3" value="{{old('gm_info3', isset($page->gm_info3) ? $page->gm_info3 : null)}}">
-
-                <label for="titolo">Immagine Info</label>
-                @if (is_null($page->gm_info3_img) || $page->gm_info3_img == '')
-                  <div class="form-group">
-                    <input type="file" class="form-control" id="img" name="gm_info3_img">
-                  </div>
-                @else
-                  <img src="{{ url('images/'.$page->gm_info3_img) }}">
-                  <button type="button" class="btn btn-default delete_image_map" data-colname="gm_info3_img">
-                    <span class="glyphicon glyphicon-remove"></span>
-                  </button>
-                @endif
-
-                <label for="titolo">Icon marker</label>
-                 @if (is_null($page->gm_icon3) || $page->gm_icon3 == '')
-                  <div class="form-group">
-                    <input type="file" class="form-control" id="img" name="gm_icon3">
-                  </div>
-                @else
-                  <img src="{{ url('images/'.$page->gm_icon3) }}">
-                  <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon3">
-                    <span class="glyphicon glyphicon-remove"></span>
-                  </button>
-                @endif
-              </div>
+              <label for="titolo">Icon marker</label>
+               @if (is_null($page->gm_icon3) || $page->gm_icon3 == '')
+                <div class="form-group">
+                  <input type="file" class="form-control" id="img" name="gm_icon3">
+                </div>
+              @else
+                <img src="{{ url('images/'.$page->gm_icon3) }}">
+                <button type="button" class="btn btn-default delete_image_map" data-colname="gm_icon3">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              @endif
             </div>
-           
-        </div> {{-- end exTab3 --}}
-      </div>
+          </div>
+         
+      </div> {{-- end exTab3 --}}
+    </div>
 
       <div class="form-group">
           <label for="caratteristiche">Listing prodotti</label>
@@ -255,10 +369,13 @@
 
                     $("button.delete_image_map").click(function(e){
                       if (confirm('Sei sicuro di voler eliminare l\'immagine?')) {
+                        e.preventDefault();
                         var colname = jQuery(this).data('colname');
+                        var id_pagina = '{{$page->id}}';
                         var data = {
                                     "_token": "{{ csrf_token() }}",
                                     colname:colname,
+                                    id_pagina:id_pagina,
                                     };
                         $.ajax({ url: "{{route('custompage.deleteMapImage')}}",
                                  data: data,

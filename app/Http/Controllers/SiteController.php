@@ -218,7 +218,12 @@ class SiteController extends Controller
 				$desc_footer_images = [];
 				$this->_getFooterImages($slide_footer,$footer_images,$desc_footer_images);
 
-			
+
+
+				/* PAGINA CHI SIAMO */
+				
+				/* SLIDE CONFEZIONATI = CHI SIAMO */
+				$slide1 = Slide::with(['immagini'])->where('id',$page->prodotti_confezionati_slide_id)->first();
 
 
 				//////////////////////////
@@ -227,7 +232,7 @@ class SiteController extends Controller
 
 				View::exists(strtolower(str_slug($page->title))) ?	$page_to_render = strtolower(str_slug($page->title)) : $page_to_render = 'template';
 
-				return view(strtolower(str_slug($page_to_render)),compact('video','first_header_image','header_images','first_desc_image','desc_images', 'footer_images', 'desc_footer_images','page'));
+				return view(strtolower(str_slug($page_to_render)),compact('video','first_header_image','header_images','first_desc_image','desc_images', 'footer_images', 'desc_footer_images','page', 'slide1'));
 
 				} 
 			else 

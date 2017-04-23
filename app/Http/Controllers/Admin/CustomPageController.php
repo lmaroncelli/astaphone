@@ -7,6 +7,9 @@ use App\Categoria;
 use App\CustomPage;
 use App\ImmagineSlide;
 use App\Slide;
+use App\SlideCategorieProdotti;
+use App\SlideProdottoWidget;
+use App\ThreeColumnsWidget;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -37,6 +40,8 @@ class CustomPageController extends AdminController
       $caratteristiche = Caratteristica::pluck('nome', 'id');
       $categorie = Categoria::pluck('nome', 'id');
 
+
+
       $categorie_associate = [];
       $caratteristiche_associate = [];
      
@@ -47,10 +52,24 @@ class CustomPageController extends AdminController
       if (!is_null($page->listingCaratteristiche)) 
           $caratteristiche_associate = explode(',',$page->listingCaratteristiche);
 
+      // slide header
+      $slideHeader = ['0' => 'Nessuno'] + Slide::has('immagini')->pluck('titolo', 'id')->all();
+      
+      // SELEZIONO SOLO LE SLIDE CHE HANNO ALMENO UN'IMMAGINE ASSOCIATA
+      $slideCategorieProdotti =    ['0' => 'Nessuno'] + SlideCategorieProdotti::pluck('titolo', 'id')->all();
+      
+      $widgetThreeColumns =  ['0' => 'Nessuno'] + ThreeColumnsWidget::pluck('nome', 'id')->all();
 
-      $slideHeader =    ['0' => 'Nessuno'] + Slide::pluck('titolo', 'id')->all();
+      // WIDGET 
+      $widgetProdottiFreschi =   ['0' => 'Nessuno'] + SlideProdottoWidget::pluck('nome', 'id')->all();
+      $widgetProdottiConfezionati =   ['0' => 'Nessuno'] + SlideProdottoWidget::pluck('nome', 'id')->all();
+      $widgetProdotti =   ['0' => 'Nessuno'] + SlideProdottoWidget::pluck('nome', 'id')->all();
      
-      return view('admin.pagine.custom.form', compact('page','caratteristiche','categorie', 'caratteristiche_associate','categorie_associate','slideHeader'));
+      // slide chisiamo
+      $slideConfezionati = ['0' => 'Nessuno'] + Slide::has('immagini')->pluck('titolo', 'id')->all();
+
+
+      return view('admin.pagine.custom.form', compact('page','caratteristiche','categorie', 'caratteristiche_associate','categorie_associate','slideHeader', 'slideConfezionati', 'slideCategorieProdotti', 'widgetThreeColumns', 'widgetProdottiFreschi','widgetProdottiConfezionati','widgetProdotti'));
       }
 
     /**
@@ -64,7 +83,9 @@ class CustomPageController extends AdminController
     {
       $page = CustomPage::find($id);
 
-      $content = $this->superManage_content_summernote($request->get('content'));
+      $content = $request->get('content');
+
+      //$content = $this->superManage_content_summernote($request->get('content'));
 
       $page->fill(['content' => $content]);
 
@@ -100,7 +121,8 @@ class CustomPageController extends AdminController
 
       $page->save();
 
-      //dd($homepage);
+      $this->_saveMap($page, $request);
+
       return redirect()->route('custompage.edit',$page->title)->with('status', 'Pagina aggiornata correttamente!');
 
     }
@@ -108,29 +130,27 @@ class CustomPageController extends AdminController
 
     public function deleteMapImageAjax(Request $request)
       {
+
         $colname = $request->get('colname');
 
-        $homepage = $this->homepage;
+        $id_pagina = $request->get('id_pagina');
 
-        if(!is_null($homepage->$colname) && $homepage->$colname != '')
+        $page = CustomPage::find($id_pagina);
+
+        if(!is_null($page->$colname) && $page->$colname != '')
           {
-        Storage::delete([$homepage->$colname]);
+        Storage::delete([$page->$colname]);
           }
        
-        $homepage->$colname = null;
+        $page->$colname = "";
 
-        $homepage->save();        
+        $page->save();        
 
         echo "ok";
       }
 
-    public function saveMap(Request $request)
+    public function _saveMap(CustomPage $page, Request $request)
       {
-
-      //dd($request->all());
-      $homepage = $this->homepage;
-
-      $homepage->fill($request->except(['gm_info_img','gm_icon','gm_info2_img','gm_icon2','gm_info3_img','gm_icon3']));
 
       foreach (['','2','3'] as $value) 
         {
@@ -144,9 +164,9 @@ class CustomPageController extends AdminController
           $image = $request->file($var_info);
           $imageName = time().$image->getClientOriginalName();
 
-          $path_img_info = $image->storeAs('homepage/map',$imageName); 
+          $path_img_info = $image->storeAs('map',$imageName); 
 
-          $homepage->$var_info = $path_img_info;
+          $page->$var_info = $path_img_info;
           
           }
 
@@ -156,18 +176,15 @@ class CustomPageController extends AdminController
           $image = $request->file($var_icon);
           $imageName = time().$image->getClientOriginalName();
 
-          $path_img_icon = $image->storeAs('homepage/map',$imageName); 
+          $path_img_icon = $image->storeAs('map',$imageName); 
 
-          $homepage->$var_icon = $path_img_icon;
+          $page->$var_icon = $path_img_icon;
           
           } 
 
         } 
 
-      $homepage->save();
-
-      //dd($homepage);
-      return redirect()->route('homepage.edit')->with('status', 'Homepage aggiornata correttamente!');
+      $page->save();
 
       }
 

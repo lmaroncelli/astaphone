@@ -55,10 +55,10 @@
 			</div>
 			<div class="col-md-7 contact-left">
 				<form action="#" method="post">
-					<input type="text" name="Name" placeholder="Your Name" required="">
-					<input type="email" name="Email" placeholder="Your Email" required="">
-					<input type="text" name="Telephone" placeholder="Telephone No" required="">
-					<textarea name="message" placeholder="Message..." required=""></textarea>
+					<input type="text" name="Name" placeholder="Nome" required="">
+					<input type="email" name="Email" placeholder="Email" required="">
+					<input type="text" name="Telephone" placeholder="Telefono" required="">
+					<textarea name="message" placeholder="Messaggio..." required=""></textarea>
 					<input type="submit" value="Submit" >
 				</form>
 			</div>

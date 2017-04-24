@@ -21,7 +21,7 @@ le categorie sono:
  
 
 
- **homepage**
+ **Chi siamo**
 
 
  l'immagine di heder è la slide slide header "chi siamo"
@@ -30,3 +30,8 @@ le categorie sono:
 
 
  
+ **Contattaci**
+
+  Installing the BotDetect Laravel Captcha Composer Package
+
+  

@@ -86,10 +86,15 @@ class CustomPageController extends AdminController
       $content = $request->get('content');
 
       //$content = $this->superManage_content_summernote($request->get('content'));
-
       $page->fill(['content' => $content]);
 
+
       $page->fill($request->except('content','listingCaratteristiche', 'listingCategorie'));
+
+      if (is_null($request->get('inMenu'))) 
+        {
+        $page->fill(['inMenu' => 0]);
+        }
 
       // caratteristiche e categorie
       $caratteristiche = $request->get('caratteristiche');

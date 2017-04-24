@@ -10,6 +10,7 @@ class CustomPage extends Model
 
 	protected $fillable = [
 					'uri',
+					'inMenu',
 	        'seo_title',
 	        'seo_description',
 	        'content',

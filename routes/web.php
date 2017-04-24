@@ -269,7 +269,8 @@ Route::get('thumbs/{filename_withslash}', function ($filename_withslash)
 // ROUTE LIBERA //
 //////////////////
 
-Route::get('/{slug?}', 'SiteController@make')/*->middleware('beforeDBQuery','afterDBQuery')*/;
+Route::get('/', 'SiteController@make');
+Route::get('/{slug}', 'SiteController@make')/*->middleware('beforeDBQuery','afterDBQuery')*/;
 
 Route::get('/categoria/{slug?}', 'SiteController@makeCategoria')/*->middleware('beforeDBQuery','afterDBQuery')*/;
 Route::post('/contact', 'SiteController@postContact');

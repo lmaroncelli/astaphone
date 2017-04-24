@@ -2726,6 +2726,11 @@ h2.typoh2{
 	width: 32.7%;
 	float: left;
 }
+
+input[type="text"]#CaptchaCode {
+    float: initial;
+}
+
 .contact-left input[type="email"]{
 	margin:0 5px;
 }
@@ -2743,6 +2748,9 @@ h2.typoh2{
     width: 35%;
     background: #ff5063;
     border: none;
+    display: block; 
+    clear: left; 
+    margin-top:30px; 
     transition: .5s all;
     -webkit-transition: .5s all;
     -moz-transition: .5s all;

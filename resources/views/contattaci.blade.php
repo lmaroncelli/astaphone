@@ -64,7 +64,7 @@
 					<textarea name="message" placeholder="Messaggio..." required=""></textarea>
 					 {!! captcha_image_html('ContactCaptcha') !!}
 					<input type="text" id="CaptchaCode" name="CaptchaCode">
-					<input type="submit" value="Submit" >
+					<input type="submit" value="Invia">
 				</form>
 			</div>
 			<div class="clearfix"> </div>

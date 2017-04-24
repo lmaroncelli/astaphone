@@ -41,3 +41,31 @@ le categorie sono:
   ai service providers) 
 
   3. pubblicare il captcha configuration file (The captcha.php file is already put in Laravel's config folder now.)
+
+
+
+ATTENZIONE:
+
+Siccome il package crea le url per gli assets (immagini e altro) del tipo
+
+localhost/astaphone/public/captcha-handler?get=image&c=contactcaptcha&t=779dca6dca64b0596c2551e546d22a6b
+
+queste vanno in conflitto con quelle per creare le pagine del sito che sono:
+
+Route::get('/{slug}?', 'SiteController@make')
+
+
+Quindi, per la mia route, definisco la regola che il prametro {slug} deve essere diverso da 'captcha-handler'; lo faccio in RouteServiceProvider
+
+ public function boot()
+    {
+        Route::pattern('slug', '((?!captcha-handler).)+');
+
+        parent::boot();
+    }
+
+
+ Inoltre definisco una route separata per la ome senza il parametro opzionale, cioè:
+
+Route::get('/', 'SiteController@make');
+Route::get('/{slug}', 'SiteController@make') 

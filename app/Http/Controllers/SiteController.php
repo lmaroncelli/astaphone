@@ -132,6 +132,11 @@ class SiteController extends Controller
 		}
 
 
+	public function postContact(Request $request)
+		{
+			dd('ciao');
+		}
+
 	public function make($slug = "")
 	{
 		if (empty($slug)) 

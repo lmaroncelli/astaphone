@@ -34,4 +34,10 @@ le categorie sono:
 
   Installing the BotDetect Laravel Captcha Composer Package
 
-  
+  1. composer require captcha-com/laravel-captcha:"4.*" (in questo modo aggiungo nel composer il require per il captcha)
+
+  2. registrare Laravel Captcha service provider (in config/app.php aggiungo la riga
+  LaravelCaptcha\Providers\LaravelCaptchaServiceProvider::class,
+  ai service providers) 
+
+  3. pubblicare il captcha configuration file (The captcha.php file is already put in Laravel's config folder now.)

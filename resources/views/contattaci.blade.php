@@ -12,6 +12,9 @@
 	 <!-- Owl-Carousel 2-->
 	<link href="{{ url('frontend_astaphone/assets/css/owl2/owl.carousel.min.css') }}" rel="stylesheet">
 	<link href="{{ url('frontend_astaphone/assets/css/owl2/owl.theme.default.min.css') }}" rel="stylesheet">
+
+	<link href="{{ captcha_layout_stylesheet_url() }}" type="text/css" rel="stylesheet">
+
 @stop
 
 
@@ -54,11 +57,13 @@
 				{!!$page->content!!}
 			</div>
 			<div class="col-md-7 contact-left">
-				<form action="#" method="post">
+				<form action="{{ url('/contact') }}" method="post">
 					<input type="text" name="Name" placeholder="Nome" required="">
 					<input type="email" name="Email" placeholder="Email" required="">
 					<input type="text" name="Telephone" placeholder="Telefono" required="">
 					<textarea name="message" placeholder="Messaggio..." required=""></textarea>
+					 {!! captcha_image_html('ContactCaptcha') !!}
+					<input type="text" id="CaptchaCode" name="CaptchaCode">
 					<input type="submit" value="Submit" >
 				</form>
 			</div>

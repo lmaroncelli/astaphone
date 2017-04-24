@@ -181,6 +181,9 @@ return [
         // Intervention Image Service Provider
         Intervention\Image\ImageServiceProvider::class,
 
+        // Laravel Captcha service provider 
+        LaravelCaptcha\Providers\LaravelCaptchaServiceProvider::class,
+
     ],
 
     /*

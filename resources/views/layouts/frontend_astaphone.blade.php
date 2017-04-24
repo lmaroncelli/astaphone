@@ -33,16 +33,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="{{ url('frontend_astaphone/assets/css/font-awesome.css') }}" rel="stylesheet"> 
 <!-- //font-awesome icons -->
 
-@yield('css')
 
-<!-- js -->
-<script src="{{ url('frontend_astaphone/assets/js/jquery-1.10.2.js') }}"></script>
 <link rel="stylesheet" href="{{ url('frontend_astaphone/assets/css/jquery.countdown.css') }}" /> <!-- countdown --> 
-<!-- //js -->  
 <!-- web fonts --> 
 <link href='//fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- //web fonts -->  
+
+@yield('css')
+
+<script src="{{ url('frontend_astaphone/assets/js/jquery-1.10.2.js') }}"></script>
 <!-- start-smooth-scrolling -->
 <script type="text/javascript">
 	jQuery(document).ready(function($) {

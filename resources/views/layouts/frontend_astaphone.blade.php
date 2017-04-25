@@ -84,8 +84,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	@yield('banner')
 	
 	
-	@include('admin.show_errors')
-	
 	@yield('content')
 
 

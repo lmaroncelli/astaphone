@@ -2706,6 +2706,21 @@ h2.typoh2{
     font-size: 14px;
     color: #999;
 }
+
+.alert  ul li {
+    font-size: initial;
+    color: #a94442;
+}
+
+
+bootstrap.css:4923
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
 .contact-left ul li a{
 	color:#999;
 	text-decoration:none;

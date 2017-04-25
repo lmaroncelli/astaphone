@@ -273,7 +273,8 @@ Route::get('/', 'SiteController@make');
 Route::get('/{slug}', 'SiteController@make')/*->middleware('beforeDBQuery','afterDBQuery')*/;
 
 Route::get('/categoria/{slug?}', 'SiteController@makeCategoria')/*->middleware('beforeDBQuery','afterDBQuery')*/;
-Route::post('/contact', 'SiteController@postContact');
+Route::post('/contattaci', 'SiteController@postContact');
+
 
 //////////
 // blog //

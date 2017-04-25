@@ -57,11 +57,13 @@
 				{!!$page->content!!}
 			</div>
 			<div class="col-md-7 contact-left">
-				<form action="{{ url('/contact') }}" method="post">
-					<input type="text" name="Name" placeholder="Nome" required="">
-					<input type="email" name="Email" placeholder="Email" required="">
-					<input type="text" name="Telephone" placeholder="Telefono" required="">
-					<textarea name="message" placeholder="Messaggio..." required=""></textarea>
+				@include('admin.show_errors')
+				<form action="{{ url('/contattaci') }}" method="post">
+					{!! csrf_field() !!}
+					<input type="text" name="name" placeholder="Nome" value="{{old('name')}}">
+					<input type="email" name="email" placeholder="Email" required="" value="{{old('email')}}">
+					<input type="text" name="telephone" placeholder="Telefono" value="{{old('text')}}">
+					<textarea name="richiesta" placeholder="Richiesta..." required="">{{old('richiesta')}}</textarea>
 					 {!! captcha_image_html('ContactCaptcha') !!}
 					<input type="text" id="CaptchaCode" name="CaptchaCode">
 					<input type="submit" value="Invia">

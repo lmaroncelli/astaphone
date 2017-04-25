@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Categoria;
 use App\CategoriaRicetta;
+use App\Contatti;
 use App\CustomPage;
 use App\Http\Requests;
+use App\Http\Requests\ContattaciRequest;
 use App\Page;
 use App\Prodotto;
 use App\Slide;
 use App\SlideCategorieProdotti;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 
 class SiteController extends Controller
@@ -132,9 +135,24 @@ class SiteController extends Controller
 		}
 
 
-	public function postContact(Request $request)
+	public function postContact(ContattaciRequest $request)
 		{
-			dd('ciao');
+		$contatti = Contatti::create($request->all());
+		
+		$name = $request->input('name');
+    $email = $request->input('email');
+    $telephone = $request->input('telephone');
+    $richiesta = $request->input('richiesta');
+
+    Mail::send('emails.contatti', ['name' => $name, 'email' => $email, 'telephone' => $telephone, 'richiesta' => $richiesta], function ($message)
+    {
+        $message->from('lmaroncelli@gmail.com', 'Luigi Maroncelli');
+        $message->to('lmaroncelli@gmail.com');
+
+    });
+
+    return redirect('/thanks');
+
 		}
 
 	public function make($slug = "")

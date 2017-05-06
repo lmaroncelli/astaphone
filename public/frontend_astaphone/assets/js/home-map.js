@@ -66,8 +66,8 @@ function initMap() {
  function calcRoute() {
 
    var partenza = document.getElementById("partenza").value;
-   //var arrivo = 'Via della Magliana, 183, 00146 Roma';
-   var arrivo = document.getElementById("arrivo").value;
+   var arrivo = 'Via Alessandro Gambalunga, 82, 47921 Rimini';
+   //var arrivo = document.getElementById("arrivo").value;
    //alert(arrivo);
    
    var selectedMode = document.getElementById('mezzo').value;
@@ -104,7 +104,12 @@ function initMap() {
 
   // trigger onCLick button
  document.getElementById("submitMappa").onclick = function() {
-  submitMappa();
+  if (document.getElementById("partenza").value != '') {
+    submitMappa();
+  } else {
+    alert('Seleziona un indirizzo di partenza');
+    return false;
+  }
  }
 
  // trigger on return input text

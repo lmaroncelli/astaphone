@@ -1,17 +1,10 @@
 <div class="row mappa">
+  
   <div class="col-md-3 text-center">
-    <div class="sub-title lead3">
-       DOVE TROVARCI
-    </div>
+    <h3 class="dove">DOVE TROVARCI</h3>
     <div class="form-group">
       <label>PARTENZA</label>
-      <input type="text" class="form-control" placeholder="Via di Tor Fiorenza, 12, Roma" id="partenza" value="{{old('partenza')}}">
-    </div>
-    <div class="form-group">
-      <label>ARRIVO</label>
-      <select class="form-control" id="arrivo">
-        <option value="Via Alessandro Gambalunga, 82, 47921 Rimini RN">ASTAPHONE</option>
-      </select>
+      <input type="text" class="form-control" placeholder="Via della Fiera, 12, Rimini" id="partenza" value="{{old('partenza')}}">
     </div>
     <div class="form-group">
       <label>MEZZO</label>
@@ -27,6 +20,7 @@
       {!!nl2br($homepage->gm_indirizzo)!!}
     </p>
   </div>
+
   <div class="col-md-9">
     <div id="map"></div>
   </div>

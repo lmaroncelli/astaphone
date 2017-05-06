@@ -37,8 +37,8 @@
   <div id="right-panel"></div>
 	
 	<script> 
-	var $lat_center = 41.898009; 
-	var $long_center = 12.492947;
+	var $lat_center = 44.063664; 
+	var $long_center = 12.570032;
 	
 	function initMap() {
 	   var center = {lat: $lat_center, lng: $long_center};
@@ -47,7 +47,7 @@
 	   directionsService = new google.maps.DirectionsService();
 
 	   var map = new google.maps.Map(document.getElementById('map'), {
-	     zoom: 12,
+	     zoom: 17,
 	     center: center,
 	     styles: mapStyle,
 	     zoomControl: true,
@@ -84,16 +84,9 @@
 
 
 	var partenza = window.opener.document.getElementById("partenza").value;
-
-	console.log(partenza);
-
-	var arrivo = window.opener.document.getElementById("arrivo").value;
-
-	console.log(arrivo);
-
+	console.log('partenza = '+partenza);
+   	var arrivo = 'Via Alessandro Gambalunga, 82, 47921 Rimini';
 	var selectedMode = window.opener.document.getElementById('mezzo').value;
-
-	console.log(selectedMode);
 
 	var request = {
 	origin:partenza, 

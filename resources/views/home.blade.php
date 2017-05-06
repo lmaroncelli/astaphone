@@ -184,8 +184,8 @@
 		  						var $icon = "";	
 		  						}
 
-		  					var $lat_center = 44.063685; 
-		  					var $long_center = 12.570100;
+		  					var $lat_center = 44.063664; 
+		  					var $long_center = 12.570032;
 		  					
 		  				</script>
 		  				<script src={{ url('frontend_astaphone/assets/js/home-map.js') }}></script>
@@ -248,7 +248,7 @@
 		<!-- //top-brands --> 
 
 		<!-- newsletter -->
-		<div class="newsletter">
+		{{-- <div class="newsletter">
 			<div class="container">
 				<div class="col-md-6 w3agile_newsletter_left">
 					<h3>Newsletter</h3>
@@ -262,7 +262,7 @@
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-		</div>
+		</div> --}}
 		<!-- //newsletter -->
 
 	{{-- 

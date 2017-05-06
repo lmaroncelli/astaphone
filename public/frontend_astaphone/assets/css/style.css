@@ -24,6 +24,16 @@ ul,label{
 body a:hover{
 	text-decoration:none;
 }
+
+input:placeholder-shown, textarea:placeholder-shown {
+  border: 1px solid #9395BC!important;
+}
+
+input::placeholder, textarea::placeholder{
+    color: #ccc!important;
+}
+
+
 /*-- header --*/
 input[type="submit"],.panel-body ul li a,.checkout-right-basket a,.additional_info_sub_grid_right a,.panel_bottom li a,.panel-title a,.breadcrumb_dress ul li a,.multi-column-dropdown li a,.footer-copy p a,.w3_footer_grid ul li a,.agileinfo_banner_bottom1_grid_left a,.navbar-default .navbar-nav > li > a,.simpleCart_shelfItem p a,.agile_ecommerce_tab_left h5 a,.w3_hs_bottom ul li a,.team-bottom a{
 	transition:.5s ease-in-out;
@@ -959,6 +969,31 @@ h3.servizi:after {
     height: 1px;
     width: 10%;   
 }
+
+h3.dove {
+    margin-bottom: 30px;
+}
+
+h3.dove:before {
+    content: '';
+    position: absolute;
+    top: 4%;
+    left: 16%;
+    background: #ff5063;
+    height: 1px;
+    width: 10%;   
+}
+
+h3.dove:after {
+    content: '';
+    position: absolute;
+    top: 4%;
+    right: 16%;
+    background: #ff5063;
+    height: 1px;
+    width: 10%;   
+}
+
 
 .w3agile_special_deals_grids {
     margin: 3em 0 0;
@@ -2449,6 +2484,41 @@ h2.typoh2{
     padding-top: 70px;
     text-align: center;
 }
+
+
+/* MAPPA */
+
+input[type="button"]#submitMappa {
+        outline: none;
+        color: #ffffff;
+        font-size: 1em;
+        padding: 10px 5px;
+        background: #ff5063;
+        border: none;
+        display: block;
+        clear: left;
+        margin: 30px auto;
+        transition: .5s all;
+        -webkit-transition: .5s all;
+        -moz-transition: .5s all;
+        -o-transition: .5s all;
+        -ms-transition: .5s all;
+}
+
+input[type="button"]#submitMappa:hover {
+    background: #3c43a4;
+}
+
+
+.istruzioni_mappa {
+    margin-top: 50px;
+}
+
+.istruzioni_mappa .btn-sm {
+    padding: 10px 10px!important;
+    margin-top: 10px!important;
+}
+
 
 @media (max-width:1080px){
 .icon-box {
